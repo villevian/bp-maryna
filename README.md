@@ -1,4 +1,4 @@
-# Business Partner A2+ — Maryna
+# Business Partner A2 — Maryna
 
-Personal course page. Lessons are copied from villevian/bp-a2plus.
+Personal course page. Lessons are copied from villevian/bp-a2.
 Homework answers sync to Supabase (project "Business Partner").
