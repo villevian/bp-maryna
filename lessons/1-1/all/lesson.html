@@ -86,11 +86,10 @@ header .n{background:linear-gradient(120deg,var(--pur),var(--mag))}
 <a href="../../../index.html" style="display:inline-block;margin:12px 22px 0;color:#3fa9ad;font-weight:500;text-decoration:none;font-size:15px">← Contents</a>
 <nav>
  <button data-s="s1" class="on">1 · Warm-up</button>
- <button data-s="s2">2 · Homework check</button>
- <button data-s="s3">3 · How was it?</button>
- <button data-s="s4">4 · Project: a visitor</button>
- <button data-s="s5">5 · Travel problems</button>
- <button data-s="s6">6 · My phrases</button>
+  <button data-s="s3">2 · How was it?</button>
+ <button data-s="s4">3 · Project: a visitor</button>
+ <button data-s="s5">4 · Travel problems</button>
+ <button data-s="s6">5 · My phrases</button>
 </nav>
 <main>
 
@@ -102,32 +101,11 @@ header .n{background:linear-gradient(120deg,var(--pur),var(--mag))}
  <div class="plus"><div class="card pluscard"><span class="cnt" id="wpn"></span><div class="big" id="wpw" style="font-size:24px"></div><div class="hint" id="wph"></div><div class="ans" id="wpa"></div></div><div class="ctrl"><button class="l" onclick="step('wp',-1)">← Back</button><button onclick="step('wp',1)">Next →</button><button class="l" onclick="shuf('wp')">Shuffle</button></div></div>
 </section>
 
-<section id="s2" class="sec">
- <h2>Homework check</h2>
- <div class="lvl"><button class="on" onclick="lv('s2',0,this)">Base</button><button class="p" onclick="lv('s2',1,this)">★ Level up</button></div>
- <div class="base">
-  <p class="ins"><b>2A</b>The video. Don’t say the letters — explain in your own words.</p>
-  <div class="card"><span class="cnt" id="vn"></span><div class="big" id="vw" style="font-size:24px"></div><div class="hint" id="vh"></div><div class="ans" id="va"></div></div><div class="ctrl"><button class="l" onclick="step('v',-1)">← Back</button><button onclick="step('v',1)">Next →</button></div>
-  <p class="ins" style="margin-top:26px"><b>B</b>Vocabulary blitz. Read the explanation and say the word. Then use it in a sentence about your work.</p>
-  <div class="card"><span class="cnt" id="bn"></span><div class="big" id="bw" style="font-size:24px"></div><div class="hint" id="bh"></div><div class="ans" id="ba"></div></div><div class="ctrl"><button class="l" onclick="step('b',-1)">← Back</button><button class="c" onclick="rev('b')">Show answer</button><button onclick="step('b',1)">Next →</button><button class="l" onclick="shuf('b')">Shuffle</button></div>
-  <p class="ins" style="margin-top:26px"><b>C</b>Say the opposite.</p>
-  <div class="card"><span class="cnt" id="on"></span><div class="big" id="ow" style="font-size:24px"></div><div class="hint" id="oh"></div><div class="ans" id="oa"></div></div><div class="ctrl"><button class="l" onclick="step('o',-1)">← Back</button><button class="c" onclick="rev('o')">Show answer</button><button onclick="step('o',1)">Next →</button><button class="l" onclick="shuf('o')">Shuffle</button></div>
- </div>
- <div class="plus">
-  <p class="ins"><span class="star">★</span>The video: retell and compare.</p>
-  <div class="card pluscard"><span class="cnt" id="vpn"></span><div class="big" id="vpw" style="font-size:24px"></div><div class="hint" id="vph"></div><div class="ans" id="vpa"></div></div><div class="ctrl"><button class="l" onclick="step('vp',-1)">← Back</button><button onclick="step('vp',1)">Next →</button></div>
-  <p class="ins" style="margin-top:26px"><span class="star">★</span>Business travel vocabulary: next level. Say the word, then tell a short story where you use it.</p>
-  <div class="card pluscard"><span class="cnt" id="bpn"></span><div class="big" id="bpw" style="font-size:24px"></div><div class="hint" id="bph"></div><div class="ans" id="bpa"></div></div><div class="ctrl"><button class="l" onclick="step('bp',-1)">← Back</button><button class="c" onclick="rev('bp')">Show answer</button><button onclick="step('bp',1)">Next →</button><button class="l" onclick="shuf('bp')">Shuffle</button></div>
-  <p class="ins" style="margin-top:26px"><span class="star">★</span>Which verbs go with it? Say as many as you can, then make a sentence.</p>
-  <div class="card pluscard"><span class="cnt" id="opn"></span><div class="big" id="opw" style="font-size:24px"></div><div class="hint" id="oph"></div><div class="ans" id="opa"></div></div><div class="ctrl"><button class="l" onclick="step('op',-1)">← Back</button><button class="c" onclick="rev('op')">Show verbs</button><button onclick="step('op',1)">Next →</button><button class="l" onclick="shuf('op')">Shuffle</button></div>
- </div>
-</section>
-
 <section id="s3" class="sec">
  <h2>How was it?</h2>
  <div class="lvl"><button class="on" onclick="lv('s3',0,this)">Base</button><button class="p" onclick="lv('s3',1,this)">★ Level up</button></div>
  <div class="base">
-  <p class="ins"><b>3</b>Put the situations in order: from the most stressful (1) to the most pleasant (7). Click to number them. Then explain.</p>
+  <p class="ins"><b>2</b>Put the situations in order: from the most stressful (1) to the most pleasant (7). Click to number them. Then explain.</p>
   <div class="chips" id="rank"></div>
   <div class="ctrl" style="margin:0 0 14px"><button class="l" onclick="rankReset()">Reset</button></div>
   <div class="frame"><b>… is …</b> because … &nbsp;·&nbsp; <span class="eg" style="color:#2a7fa8;font-style:italic">Travelling abroad <b>is</b> interesting <b>because</b> you see new places.</span></div>
@@ -146,7 +124,7 @@ header .n{background:linear-gradient(120deg,var(--pur),var(--mag))}
  <h2>PROJECT: Helping a business traveller</h2>
  <div class="lvl"><button class="on" onclick="lv('s4',0,this)">Base</button><button class="p" onclick="lv('s4',1,this)">★ Level up</button></div>
  <div class="base">
-  <p class="ins"><b>4A</b>Round 1. A client from the US is coming to your city. Your teacher is the client. Give advice in four areas.</p>
+  <p class="ins"><b>3A</b>Round 1. A client from the US is coming to your city. Your teacher is the client. Give advice in four areas.</p>
   <div class="cats">
    <div><b>Travel</b>How to arrive: by plane, train, bus …</div>
    <div><b>Accommodation</b>Where to stay and why</div>
@@ -173,7 +151,7 @@ header .n{background:linear-gradient(120deg,var(--pur),var(--mag))}
 
 <section id="s5" class="sec">
  <h2>Travel problems</h2>
- <p class="ins"><b>5</b>Read the situation and solve the problem in a short conversation. Your teacher plays the other person.</p>
+ <p class="ins"><b>4</b>Read the situation and solve the problem in a short conversation. Your teacher plays the other person.</p>
  <div class="lvl"><button class="on" onclick="lv('s5',0,this)">Base</button><button class="p" onclick="lv('s5',1,this)">★ Level up</button></div>
  <div class="base"><div class="card"><span class="cnt" id="pn"></span><div class="big" id="pw" style="font-size:24px"></div><div class="hint" id="ph"></div><div class="ans" id="pa"></div></div><div class="ctrl"><button class="l" onclick="step('p',-1)">← Back</button><button onclick="step('p',1)">Next →</button><button class="l" onclick="shuf('p')">Shuffle</button></div>
   <div class="phr" style="margin-top:12px"><span>I’m afraid …</span><span>My flight was delayed.</span><span>I have a reservation under the name …</span><span>Is there another flight / room?</span><span>Could you help me, please?</span><span>What can I do?</span></div></div>
@@ -183,7 +161,7 @@ header .n{background:linear-gradient(120deg,var(--pur),var(--mag))}
 
 <section id="s6" class="sec">
  <h2>My phrases</h2>
- <p class="ins"><b>6</b>Write 5 phrases from today you want to remember. Write the whole phrase, not one word: <i>make a reservation</i>, not <i>reservation</i>.</p>
+ <p class="ins"><b>5</b>Write 5 phrases from today you want to remember. Write the whole phrase, not one word: <i>make a reservation</i>, not <i>reservation</i>.</p>
  <div class="mine" id="mine"><input placeholder="1. …"><input placeholder="2. …"><input placeholder="3. …"><input placeholder="4. …"><input placeholder="5. …"></div>
  <div class="ctrl"><button class="c" onclick="copyMine()">Copy my phrases</button><span class="msg" id="cmsg"></span></div>
  <p class="ins" style="margin-top:24px"><b>✓</b>How well can you use vocabulary related to business travel? 0 = I need more practice, 5 = I know this well.</p>
@@ -215,5 +193,5 @@ function copyMine(){const t=[...document.querySelectorAll("#mine input")].map(x=
  try{navigator.clipboard.writeText(t).then(()=>cmsg.textContent="Copied!",()=>cmsg.textContent="Select the text and copy it manually.")}catch(e){cmsg.textContent="Select the text and copy it manually."}}
 function sc(b){document.querySelectorAll("#score button").forEach(x=>x.classList.remove("on"));b.classList.add("on")}
 document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>{document.querySelectorAll("nav button,.sec").forEach(x=>x.classList.remove("on"));b.classList.add("on");$(b.dataset.s).classList.add("on")});
-$("s1").classList.add("on");for(const k in D)render(k);rankDraw("");rankDraw("p");
+$("s1").classList.add("on");for(const k in D)if($(k+"w"))render(k);rankDraw("");rankDraw("p");
 </script></body></html>
