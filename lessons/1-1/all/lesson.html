@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>1.1 Business travel — Lesson</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--coral:#3fa9ad;--mag:#c4127a;--pur:#6b2a8c;--grey:#77787b;--lg:#eeeff0;--ink:#231f20;--green:#5c9e2f;--gbg:#eef6d3;--rbg:#fbe0db}
+*{box-sizing:border-box}body{margin:0;font-family:"Fira Sans",system-ui,sans-serif;color:var(--ink);background:#fff;font-weight:300}
+header{display:flex;align-items:stretch;border-bottom:3px solid var(--coral)}
+header .n{background:linear-gradient(120deg,var(--pur),var(--mag));color:#fff;font-weight:500;font-size:34px;padding:14px 22px}
+header h1{margin:0;align-self:center;padding-left:18px;font-weight:500;font-size:28px;color:#4d4d4f}
+header .t{margin-left:auto;align-self:center;margin-right:18px;background:var(--coral);color:#fff;font-weight:600;font-size:13px;padding:6px 12px;border-radius:4px}
+nav{display:flex;gap:6px;padding:14px 22px 0;flex-wrap:wrap}
+nav button{font:inherit;font-weight:500;border:1.5px solid var(--coral);background:#fff;color:var(--coral);padding:7px 14px;border-radius:20px;cursor:pointer}
+nav button.on{background:var(--coral);color:#fff}
+main{max-width:980px;margin:0 auto;padding:18px 22px 40px}
+.sec{display:none}.sec.on{display:block}
+h2{font-weight:500;color:var(--grey);font-size:22px;margin:6px 0 4px}
+.ins{font-weight:500;margin:0 0 14px}.ins b{color:var(--coral);font-size:20px;margin-right:6px}
+.vocab{display:flex;flex-wrap:wrap;gap:6px;border:1px solid #a7a9ac;padding:8px 10px;margin-bottom:16px;font-size:14px}
+.vocab span{background:var(--lg);padding:3px 8px;border-radius:3px}
+.card{background:var(--lg);border-left:5px solid var(--coral);padding:22px 24px;min-height:150px;position:relative}
+.card .cnt{position:absolute;top:10px;right:14px;color:var(--grey);font-size:13px}
+.big{font-size:30px;font-weight:500;margin:4px 0 10px}
+.hint{color:var(--grey);font-size:15px}
+.ans{display:none;margin-top:14px;padding:10px 14px;background:#fff;border:1px dashed var(--coral);color:#2a7fa8;font-style:italic;font-weight:400}
+.ans.show{display:block}
+.ctrl{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.ctrl button{font:inherit;font-weight:500;border:0;padding:9px 16px;border-radius:4px;cursor:pointer;background:#4d4d4f;color:#fff}
+.ctrl button.c{background:var(--coral)}.ctrl button.l{background:#fff;color:#4d4d4f;border:1px solid #a7a9ac}
+table.sp{border-collapse:collapse;width:100%;font-size:16px;margin:6px 0 4px;background:#fff}
+table.sp th,table.sp td{border:1px solid #c9cacc;padding:7px 10px;text-align:left}
+table.sp th{background:#e3e4e5;font-weight:600}
+table.sp td:first-child{font-weight:500;width:30%}
+.frames{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0 0 16px}
+.frames div{padding:9px 11px;font-size:14px;border-radius:4px;line-height:1.35}
+.frames b{display:block;font-weight:600;margin-bottom:2px}
+.f1{background:var(--gbg)}.f2{background:var(--rbg)}.f3{background:#fdf0d5}.f4{background:#e3eef8}
+.stmt{font-size:30px;font-weight:500;line-height:1.25;margin:6px 0 10px}
+.tag{display:inline-block;font-size:12px;font-weight:600;padding:3px 9px;border-radius:12px;color:#fff;margin-bottom:6px}
+.tt{background:var(--green)}.tf{background:#d6322f}.tp{background:#d99a1c}.to{background:var(--mag)}
+.note{font-size:14px;color:#4d4d4f;margin-top:8px}
+.key{display:grid;grid-template-columns:1fr 1fr;gap:6px 22px;font-size:15px}
+.key div{border-bottom:1px solid #e3e4e5;padding:4px 0}
+.key b{font-weight:600}
+.use{background:#f6f5f1;border:1px solid #e3e1da;border-radius:4px;padding:10px 14px;margin-top:12px}
+.use .uh{font-weight:600;margin-bottom:6px;color:#4d4d4f}
+.use ul{margin:0;padding-left:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:4px 18px;font-size:15px}
+.use li{font-weight:400}
+@media(max-width:700px){.use ul{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.frames{grid-template-columns:1fr 1fr}.big,.stmt{font-size:23px}}
+
+:root{--gold:#f2b631}
+header .n{background:linear-gradient(120deg,var(--pur),var(--mag))}
+.lvl{display:inline-flex;border:1.5px solid var(--coral);border-radius:20px;overflow:hidden;margin:0 0 14px}
+.lvl button{font:inherit;font-weight:500;border:0;background:#fff;color:var(--coral);padding:6px 16px;cursor:pointer}
+.lvl button.on{background:var(--coral);color:#fff}
+.lvl button.p.on{background:var(--gold);color:#3b2c00}
+.lvl button.p{color:#b07d00}
+.plus{display:none}.sec.up .plus{display:block}.sec.up .base{display:none}
+.pluscard{border-left-color:var(--gold)!important;background:#fdf7e6!important}
+.star{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--gold);color:#fff;font-size:13px;margin-right:6px;vertical-align:2px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 14px}
+.chips span,.chips button{font:inherit;background:#fff;border:1.5px solid var(--coral);color:var(--ink);padding:7px 12px;border-radius:18px;font-size:15px;font-weight:400}
+.chips button{cursor:pointer}
+.chips button i{font-style:normal;font-weight:600;color:#fff;background:var(--coral);border-radius:50%;display:inline-block;width:20px;height:20px;line-height:20px;text-align:center;margin-right:6px;font-size:12px}
+.chips.gold span{border-color:var(--gold)}
+.frame{background:#e6f4f4;border-radius:4px;padding:10px 14px;margin:8px 0 14px;font-size:16px}
+.frame b{font-weight:600}
+.frame.g{background:#fdf0d5}
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:8px 0 14px}
+.cats div{background:var(--lg);border-top:4px solid var(--coral);padding:10px 12px;font-size:14.5px;line-height:1.4}
+.cats b{display:block;font-weight:600;margin-bottom:4px;font-size:15.5px}
+.cats.g div{border-top-color:var(--gold);background:#fdf7e6}
+.phr{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 14px}
+.phr span{background:#fff;border:1px solid var(--coral);color:#4d4d4f;padding:4px 10px;border-radius:14px;font-size:14px}
+.phr.g span{border-color:var(--gold)}
+.mine{display:grid;gap:6px;max-width:640px}
+.mine input{font:inherit;font-size:16px;padding:8px 10px;border:1px solid #c9cacc;border-radius:4px}
+.score{display:flex;gap:6px;margin:8px 0}
+.score button{font:inherit;width:40px;height:40px;border-radius:50%;border:1.5px solid var(--coral);background:#fff;color:var(--coral);font-weight:600;cursor:pointer}
+.score button.on{background:var(--coral);color:#fff}
+.msg{color:var(--grey);font-size:14px;margin-left:8px}
+@media(max-width:800px){.cats{grid-template-columns:1fr 1fr}}
+</style></head><body>
+<header><div class="n">1.1</div><h1>Business travel</h1><div class="t">LESSON</div></header>
+<a href="../../../index.html" style="display:inline-block;margin:12px 22px 0;color:#3fa9ad;font-weight:500;text-decoration:none;font-size:15px">← Contents</a>
+<nav>
+ <button data-s="s1" class="on">1 · Warm-up</button>
+ <button data-s="s2">2 · Homework check</button>
+ <button data-s="s3">3 · How was it?</button>
+ <button data-s="s4">4 · Project: a visitor</button>
+ <button data-s="s5">5 · Travel problems</button>
+ <button data-s="s6">6 · My phrases</button>
+</nav>
+<main>
+
+<section id="s1" class="sec">
+ <h2>Warm-up</h2>
+ <p class="ins"><b>1</b>Answer the question. Speak for about one minute.</p>
+ <div class="lvl"><button class="on" onclick="lv('s1',0,this)">Base</button><button class="p" onclick="lv('s1',1,this)">★ Level up</button></div>
+ <div class="base"><div class="card"><span class="cnt" id="wn"></span><div class="big" id="ww" style="font-size:24px"></div><div class="hint" id="wh"></div><div class="ans" id="wa"></div></div><div class="ctrl"><button class="l" onclick="step('w',-1)">← Back</button><button onclick="step('w',1)">Next →</button><button class="l" onclick="shuf('w')">Shuffle</button></div></div>
+ <div class="plus"><div class="card pluscard"><span class="cnt" id="wpn"></span><div class="big" id="wpw" style="font-size:24px"></div><div class="hint" id="wph"></div><div class="ans" id="wpa"></div></div><div class="ctrl"><button class="l" onclick="step('wp',-1)">← Back</button><button onclick="step('wp',1)">Next →</button><button class="l" onclick="shuf('wp')">Shuffle</button></div></div>
+</section>
+
+<section id="s2" class="sec">
+ <h2>Homework check</h2>
+ <div class="lvl"><button class="on" onclick="lv('s2',0,this)">Base</button><button class="p" onclick="lv('s2',1,this)">★ Level up</button></div>
+ <div class="base">
+  <p class="ins"><b>2A</b>The video. Don’t say the letters — explain in your own words.</p>
+  <div class="card"><span class="cnt" id="vn"></span><div class="big" id="vw" style="font-size:24px"></div><div class="hint" id="vh"></div><div class="ans" id="va"></div></div><div class="ctrl"><button class="l" onclick="step('v',-1)">← Back</button><button onclick="step('v',1)">Next →</button></div>
+  <p class="ins" style="margin-top:26px"><b>B</b>Vocabulary blitz. Read the explanation and say the word. Then use it in a sentence about your work.</p>
+  <div class="card"><span class="cnt" id="bn"></span><div class="big" id="bw" style="font-size:24px"></div><div class="hint" id="bh"></div><div class="ans" id="ba"></div></div><div class="ctrl"><button class="l" onclick="step('b',-1)">← Back</button><button class="c" onclick="rev('b')">Show answer</button><button onclick="step('b',1)">Next →</button><button class="l" onclick="shuf('b')">Shuffle</button></div>
+  <p class="ins" style="margin-top:26px"><b>C</b>Say the opposite.</p>
+  <div class="card"><span class="cnt" id="on"></span><div class="big" id="ow" style="font-size:24px"></div><div class="hint" id="oh"></div><div class="ans" id="oa"></div></div><div class="ctrl"><button class="l" onclick="step('o',-1)">← Back</button><button class="c" onclick="rev('o')">Show answer</button><button onclick="step('o',1)">Next →</button><button class="l" onclick="shuf('o')">Shuffle</button></div>
+ </div>
+ <div class="plus">
+  <p class="ins"><span class="star">★</span>The video: retell and compare.</p>
+  <div class="card pluscard"><span class="cnt" id="vpn"></span><div class="big" id="vpw" style="font-size:24px"></div><div class="hint" id="vph"></div><div class="ans" id="vpa"></div></div><div class="ctrl"><button class="l" onclick="step('vp',-1)">← Back</button><button onclick="step('vp',1)">Next →</button></div>
+  <p class="ins" style="margin-top:26px"><span class="star">★</span>Business travel vocabulary: next level. Say the word, then tell a short story where you use it.</p>
+  <div class="card pluscard"><span class="cnt" id="bpn"></span><div class="big" id="bpw" style="font-size:24px"></div><div class="hint" id="bph"></div><div class="ans" id="bpa"></div></div><div class="ctrl"><button class="l" onclick="step('bp',-1)">← Back</button><button class="c" onclick="rev('bp')">Show answer</button><button onclick="step('bp',1)">Next →</button><button class="l" onclick="shuf('bp')">Shuffle</button></div>
+  <p class="ins" style="margin-top:26px"><span class="star">★</span>Which verbs go with it? Say as many as you can, then make a sentence.</p>
+  <div class="card pluscard"><span class="cnt" id="opn"></span><div class="big" id="opw" style="font-size:24px"></div><div class="hint" id="oph"></div><div class="ans" id="opa"></div></div><div class="ctrl"><button class="l" onclick="step('op',-1)">← Back</button><button class="c" onclick="rev('op')">Show verbs</button><button onclick="step('op',1)">Next →</button><button class="l" onclick="shuf('op')">Shuffle</button></div>
+ </div>
+</section>
+
+<section id="s3" class="sec">
+ <h2>How was it?</h2>
+ <div class="lvl"><button class="on" onclick="lv('s3',0,this)">Base</button><button class="p" onclick="lv('s3',1,this)">★ Level up</button></div>
+ <div class="base">
+  <p class="ins"><b>3</b>Put the situations in order: from the most stressful (1) to the most pleasant (7). Click to number them. Then explain.</p>
+  <div class="chips" id="rank"></div>
+  <div class="ctrl" style="margin:0 0 14px"><button class="l" onclick="rankReset()">Reset</button></div>
+  <div class="frame"><b>… is …</b> because … &nbsp;·&nbsp; <span class="eg" style="color:#2a7fa8;font-style:italic">Travelling abroad <b>is</b> interesting <b>because</b> you see new places.</span></div>
+  <div class="chips "><span>exciting</span><span>boring</span><span>stressful</span><span>tiring</span><span>interesting</span><span>expensive</span><span>convenient</span><span>annoying</span><span>relaxing</span><span>useful</span></div>
+ </div>
+ <div class="plus">
+  <p class="ins"><span class="star">★</span>Rank the situations, then talk about them with stronger adjectives and phrases. Give a real example for each.</p>
+  <div class="chips gold" id="rankp"></div>
+  <div class="ctrl" style="margin:0 0 14px"><button class="l" onclick="rankReset('p')">Reset</button></div>
+  <div class="frame g"><b>What I find most … is …</b> &nbsp;·&nbsp; <b>… can be a real hassle, especially when …</b> &nbsp;·&nbsp; <b>The worst / best part of … is …</b></div>
+  <div class="chips gold"><span>nerve-racking</span><span>time-consuming</span><span>exhausting</span><span>hassle-free</span><span>overpriced</span><span>rewarding</span><span>unpredictable</span><span>a real hassle</span><span>a waste of time</span><span>eye-opening</span></div>
+ </div>
+</section>
+
+<section id="s4" class="sec">
+ <h2>PROJECT: Helping a business traveller</h2>
+ <div class="lvl"><button class="on" onclick="lv('s4',0,this)">Base</button><button class="p" onclick="lv('s4',1,this)">★ Level up</button></div>
+ <div class="base">
+  <p class="ins"><b>4A</b>Round 1. A client from the US is coming to your city. Your teacher is the client. Give advice in four areas.</p>
+  <div class="cats">
+   <div><b>Travel</b>How to arrive: by plane, train, bus …</div>
+   <div><b>Accommodation</b>Where to stay and why</div>
+   <div><b>Getting around</b>Public transportation, taxi, ridesharing app</div>
+   <div><b>Free time</b>Sights to see, food to try</div>
+  </div>
+  <div class="phr"><span>Take a flight to …</span><span>Then take a train / taxi to …</span><span>The … hotel is in a good location.</span><span>It’s quiet / modern / near the office.</span><span>Don’t take … because …</span><span>You should try …</span></div>
+  <p class="ins"><b>B</b>Round 2. Now you go to the US. Ask your teacher about the trip.</p>
+  <div class="phr"><span>How do I get from the airport to …?</span><span>Where can I stay?</span><span>Is it easy to use public transportation?</span><span>Can I use a ridesharing app?</span><span>What should I see in my free time?</span></div>
+ </div>
+ <div class="plus">
+  <p class="ins"><span class="star">★</span>Round 1 — a difficult client. Your teacher plays a client with special requests. Give advice and solve the problems.</p>
+  <div class="cats g">
+   <div><b>Tight budget</b>The company pays max €120 a night.</div>
+   <div><b>Busy schedule</b>Three meetings in different parts of the city on one day.</div>
+   <div><b>Family</b>The client wants to bring a partner and a child for the weekend.</div>
+   <div><b>First time in Europe</b>Doesn’t know local rules, money, tips, transport.</div>
+  </div>
+  <div class="phr g"><span>I’d recommend …</span><span>You might want to …</span><span>If I were you, I’d …</span><span>It’s worth -ing …</span><span>Keep in mind that …</span><span>The best option would be …</span><span>A cheaper alternative is …</span></div>
+  <p class="ins"><span class="star">★</span>Round 2 — negotiate the trip. You go to the US for an important client meeting. Ask questions, and push for what you need: a better hotel, a later meeting time, a driver from the airport.</p>
+  <div class="phr g"><span>Would it be possible to …?</span><span>I was wondering if …</span><span>Could we arrange …?</span><span>That works for me.</span><span>I’d prefer … if possible.</span></div>
+ </div>
+</section>
+
+<section id="s5" class="sec">
+ <h2>Travel problems</h2>
+ <p class="ins"><b>5</b>Read the situation and solve the problem in a short conversation. Your teacher plays the other person.</p>
+ <div class="lvl"><button class="on" onclick="lv('s5',0,this)">Base</button><button class="p" onclick="lv('s5',1,this)">★ Level up</button></div>
+ <div class="base"><div class="card"><span class="cnt" id="pn"></span><div class="big" id="pw" style="font-size:24px"></div><div class="hint" id="ph"></div><div class="ans" id="pa"></div></div><div class="ctrl"><button class="l" onclick="step('p',-1)">← Back</button><button onclick="step('p',1)">Next →</button><button class="l" onclick="shuf('p')">Shuffle</button></div>
+  <div class="phr" style="margin-top:12px"><span>I’m afraid …</span><span>My flight was delayed.</span><span>I have a reservation under the name …</span><span>Is there another flight / room?</span><span>Could you help me, please?</span><span>What can I do?</span></div></div>
+ <div class="plus"><div class="card pluscard"><span class="cnt" id="ppn"></span><div class="big" id="ppw" style="font-size:24px"></div><div class="hint" id="pph"></div><div class="ans" id="ppa"></div></div><div class="ctrl"><button class="l" onclick="step('pp',-1)">← Back</button><button onclick="step('pp',1)">Next →</button><button class="l" onclick="shuf('pp')">Shuffle</button></div>
+  <div class="phr g" style="margin-top:12px"><span>I understand, but …</span><span>I’d like to speak to …</span><span>According to …, I’m entitled to …</span><span>What I’d suggest is …</span><span>Would you be able to …?</span><span>I appreciate your help.</span></div></div>
+</section>
+
+<section id="s6" class="sec">
+ <h2>My phrases</h2>
+ <p class="ins"><b>6</b>Write 5 phrases from today you want to remember. Write the whole phrase, not one word: <i>make a reservation</i>, not <i>reservation</i>.</p>
+ <div class="mine" id="mine"><input placeholder="1. …"><input placeholder="2. …"><input placeholder="3. …"><input placeholder="4. …"><input placeholder="5. …"></div>
+ <div class="ctrl"><button class="c" onclick="copyMine()">Copy my phrases</button><span class="msg" id="cmsg"></span></div>
+ <p class="ins" style="margin-top:24px"><b>✓</b>How well can you use vocabulary related to business travel? 0 = I need more practice, 5 = I know this well.</p>
+ <div class="score" id="score"><button onclick="sc(this)">0</button><button onclick="sc(this)">1</button><button onclick="sc(this)">2</button><button onclick="sc(this)">3</button><button onclick="sc(this)">4</button><button onclick="sc(this)">5</button></div>
+ <p class="ins" style="margin-top:20px"><span class="star">★</span>Level up: Without stopping, speak for one minute about your city for a visitor from abroad. Use at least 5 words from today.</p>
+</section>
+</main>
+<script>
+const D={"w": ["Tell me about your last trip. Was it for work or a holiday?", "How did you get there? What transport did you use?", "Where did you stay? Would you stay there again? Why? / Why not?", "What went wrong on the trip? What went well?", "What do you always take with you when you travel?"], "wp": ["Some people say business trips are a waste of time and money now that we have video calls. Do you agree?", "What’s the most stressful part of travelling for work for you — and how do you deal with it?", "Have you ever combined a business trip with a holiday (‘bleisure’)? Would you like to?", "If your company had a travel policy, what three rules would you write?", "How do you deal with jet lag or long journeys before an important meeting?"], "v": [["Alex", "What does he talk about? How does he stay in touch when he travels?"], ["Alessio", "What’s important to him in a hotel? What advice does he give?"], ["Amira", "How does she feel about talking to local people? What happened at the airport?"], ["All speakers", "Do they enjoy travelling for work? Who enjoys it most? Why do you think so?"]], "vp": [["Retell Alex", "Retell what Alex said, using reported speech: He said that … / He explained that …"], ["Retell Alessio", "Explain Alessio’s advice in your own words. Is it good advice for your job too?"], ["Retell Amira", "Tell Amira’s airport story as if it happened to you. Add one detail: what did you do next?"], ["Compare", "Which speaker is most similar to you? Which one is most different from you? Why?"]], "b": [["an arrangement to keep a hotel room or a table for you", "reservation", "make / confirm / cancel a reservation"], ["a journey by plane", "flight", "take / catch / miss a flight"], ["a car, bus, van or truck", "vehicle", "hire a vehicle"], ["an app that you use to order a car and a driver", "ridesharing app", "use a ridesharing app"], ["the door at the airport where you get on the plane", "gate", "go to gate 12"], ["the time you spend in a hotel or a place", "stay", "a comfortable stay"], ["a room at the airport where you wait for your flight", "lounge", "the departure lounge"], ["the place where something is", "location", "a great location"], ["buses, trains and the metro that everyone can use", "public transportation", "take public transportation"], ["to or in another country", "abroad", "go abroad / travel abroad"], ["late, usually because of a problem", "delayed", "The flight was delayed by two hours."], ["the action of leaving, especially at the start of a journey", "departure", "the departure time"]], "bp": [["a short stop between two flights", "layover", "a two-hour layover in Frankfurt"], ["a flight that leaves late at night and arrives early in the morning", "red-eye (flight)", "I took the red-eye to New York."], ["a small bag you take with you into the plane", "carry-on (bag)", "Only one carry-on is allowed."], ["the plan of your trip: flights, hotels, meetings", "itinerary", "I’ll send you the itinerary."], ["money the company gives you per day for food on a trip", "per diem", "Our per diem is $60."], ["to pay back money that you spent", "reimburse", "The company will reimburse your expenses."], ["a document with all the money you spent on a trip", "expense report", "submit an expense report"], ["feeling tired after a long flight across time zones", "jet lag", "I’m still jet-lagged."], ["to move to a better seat or room", "upgrade", "I got an upgrade to business class."], ["the document you need to get on the plane", "boarding pass", "Can I see your boarding pass?"], ["a hotel that is the best for business guests: Wi-Fi, desk, meeting rooms", "business-friendly", "a business-friendly hotel"], ["without problems or stress", "hassle-free", "a hassle-free check-in"]], "o": [["long-haul", "short-haul"], ["take-off", "landing"], ["arrival", "departure"], ["on-time", "delayed"], ["local", "abroad"], ["budget hotel", "luxury hotel"], ["public transportation", "private car / taxi"]], "op": [["___ a flight", "catch / miss / board / book / change"], ["___ a reservation", "make / confirm / cancel / change"], ["___ a car", "hire / rent / park / share"], ["___ at a hotel", "stay / check in / check out"], ["___ an expense report", "submit / fill in / approve"], ["___ your boarding pass", "show / print / download"], ["___ a meeting", "arrange / move / reschedule / cancel"], ["___ jet lag", "get over / suffer from / beat"]], "p": [["Your flight is delayed by three hours. You have a meeting at 2 pm.", "Call the client. Explain and suggest a new time."], ["The hotel can’t find your reservation.", "Explain the problem to the receptionist. Ask for a solution."], ["You arrive at the gate and the plane has left.", "Talk to the airline staff. Ask about the next flight."], ["The taxi is late and you need to get to the airport.", "Call the taxi company / find another way."], ["Your luggage didn’t arrive.", "Talk to the airport staff. Describe your bag."], ["The hotel room is noisy and the Wi-Fi doesn’t work. You need to work tonight.", "Ask reception for a different room."]], "pp": [["The airline cancelled your flight. You want compensation and a hotel for the night.", "Negotiate politely but firmly. Ask what you are entitled to."], ["Your hotel charged you for two nights, but you stayed one.", "Complain and ask for a refund. Mention your company account."], ["You must tell your manager that the trip will cost €600 more than planned.", "Explain why and suggest a cheaper option."], ["A client from the US wants to meet tomorrow, but you have no flight until Thursday.", "Suggest alternatives: video call, another city, another date."], ["Your colleague booked a budget hotel far from the office. The client meeting is at 8 am.", "Persuade your colleague to change the booking."], ["Write a 3-line message to your team: your flight is delayed and you’ll miss the meeting.", "Then read it aloud. Is it clear, short and polite?"]]};
+const SIT=["Making a hotel reservation", "Waiting in a lounge", "Travelling abroad", "Using a ridesharing app", "A delayed train or flight", "Driving when you’re abroad", "A long-haul flight"];
+const st={},ord={};for(const k in D){st[k]=0;ord[k]=D[k].map((_,i)=>i)}
+const $=id=>document.getElementById(id);
+function render(k){const d=D[k][ord[k][st[k]]];$(k+"n").textContent=(st[k]+1)+" / "+D[k].length;const a=$(k+"a");a.classList.remove("show");const w=$(k+"w"),h=$(k+"h");
+ if(k=="w"||k=="wp"){w.textContent=d;h.textContent=""}
+ else if(k=="v"||k=="vp"){w.textContent=d[0];h.innerHTML='<span style="color:var(--ink);font-size:18px;font-weight:400">'+d[1]+'</span>'}
+ else if(k=="b"||k=="bp"){w.textContent=d[0];h.textContent="What’s the word?";a.innerHTML="<b>"+d[1]+"</b> — "+d[2]}
+ else if(k=="o"){w.textContent=d[0];h.textContent="What’s the opposite?";a.textContent=d[1]}
+ else if(k=="op"){w.textContent=d[0];h.textContent="Which verbs can you use?";a.textContent=d[1]}
+ else if(k=="p"||k=="pp"){w.textContent=d[0];h.innerHTML='<span style="color:var(--ink);font-size:18px;font-weight:400">Task: '+d[1]+'</span>'}
+}
+function step(k,n){const L=D[k].length;st[k]=(st[k]+n+L)%L;render(k)}
+function rev(k){$(k+"a").classList.toggle("show")}
+function shuf(k){const a=ord[k];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}st[k]=0;render(k)}
+function lv(s,u,b){$(s).classList.toggle("up",!!u);b.parentNode.querySelectorAll("button").forEach(x=>x.classList.remove("on"));b.classList.add("on")}
+const R={"":[],"p":[]};
+function rankDraw(p){const box=$("rank"+p);box.innerHTML="";SIT.forEach((s,i)=>{const b=document.createElement("button");const n=R[p].indexOf(i);b.innerHTML=(n>=0?"<i>"+(n+1)+"</i>":"")+s;b.onclick=()=>{const j=R[p].indexOf(i);if(j>=0)R[p].splice(j,1);else R[p].push(i);rankDraw(p)};box.appendChild(b)})}
+function rankReset(p=""){R[p]=[];rankDraw(p)}
+function copyMine(){const t=[...document.querySelectorAll("#mine input")].map(x=>x.value.trim()).filter(Boolean).join("\n");if(!t){cmsg.textContent="Write your phrases first.";return}
+ try{navigator.clipboard.writeText(t).then(()=>cmsg.textContent="Copied!",()=>cmsg.textContent="Select the text and copy it manually.")}catch(e){cmsg.textContent="Select the text and copy it manually."}}
+function sc(b){document.querySelectorAll("#score button").forEach(x=>x.classList.remove("on"));b.classList.add("on")}
+document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>{document.querySelectorAll("nav button,.sec").forEach(x=>x.classList.remove("on"));b.classList.add("on");$(b.dataset.s).classList.add("on")});
+$("s1").classList.add("on");for(const k in D)render(k);rankDraw("");rankDraw("p");
+</script></body></html>
