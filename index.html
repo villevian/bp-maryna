@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Business Partner A2+ — Contents</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--teal:#3fa9ad;--teal2:#e6f4f4;--mag:#c4127a;--pur:#6b2a8c;--grey:#77787b;--lg:#eeeff0;--ink:#231f20;--gold:#f2b631}
+*{box-sizing:border-box}body{margin:0;font-family:"Fira Sans",system-ui,sans-serif;color:var(--ink);background:#fff;font-weight:300}
+header{display:flex;align-items:stretch;border-bottom:3px solid var(--teal)}
+header .lv{background:linear-gradient(120deg,#6b2a8c,#c4127a);color:#fff;font-weight:500;font-size:30px;padding:14px 22px}
+header h1{margin:0;align-self:center;padding-left:18px;font-weight:500;font-size:28px;color:#4d4d4f}
+header .who{margin-left:auto;align-self:center;margin-right:18px;text-align:right;font-size:14px;color:var(--grey)}
+header .who b{display:block;color:var(--ink);font-weight:600;font-size:16px}
+.top{max-width:1180px;margin:0 auto;padding:16px 22px 0;display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between}
+.tracks{display:flex;gap:6px;flex-wrap:wrap}
+.tracks button{font:inherit;font-weight:500;border:1.5px solid var(--teal);background:#fff;color:var(--teal);padding:6px 14px;border-radius:20px;cursor:pointer}
+.tracks button.on{background:var(--teal);color:#fff}
+.prog{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--grey)}
+.prog .bar{width:180px;height:8px;background:var(--lg);border-radius:4px;overflow:hidden}
+.prog .bar i{display:block;height:100%;background:var(--teal);width:0}
+.legend{max-width:1180px;margin:10px auto 0;padding:0 22px;display:flex;flex-wrap:wrap;gap:14px;font-size:13px;color:var(--grey)}
+.legend span{display:inline-flex;align-items:center;gap:5px}
+main{max-width:1180px;margin:0 auto;padding:10px 22px 40px}
+.unit{margin-top:22px;border:1px solid #d5d6d7}
+.uh{display:flex;align-items:center;background:#4d4d4f;color:#fff}
+.uh b{padding:8px 16px;font-weight:600;font-size:17px;letter-spacing:.3px;text-transform:uppercase}
+.uh .done{margin-left:auto;margin-right:14px;font-size:13px;opacity:.85}
+.grid{display:grid;grid-template-columns:repeat(6,1fr)}
+.ls{border-right:1px solid #d5d6d7;display:flex;flex-direction:column;min-height:210px;background:#fff}
+.ls:last-child{border-right:0}
+.ls.ws{background:var(--teal2)}
+.lh{background:var(--teal2);padding:8px 10px;min-height:58px;border-bottom:1px solid #d5d6d7}
+.ls.ws .lh{background:var(--teal);color:#fff}
+.lh .n{font-weight:600;font-size:15px;margin-right:4px}
+.lh .t{font-weight:500;font-size:14px;line-height:1.25}
+.lb{padding:8px 10px;font-size:13px;line-height:1.4;flex:1;color:#333}
+.tag{display:inline-block;font-size:10.5px;font-weight:600;padding:1px 7px;border-radius:9px;margin:0 0 6px;text-transform:uppercase;letter-spacing:.4px}
+.tag.both{background:#efe6f5;color:#6b2a8c}
+.ver{margin:4px 0 6px}.ver b{display:block;font-weight:600;font-size:12px;color:#4d4d4f}.ver.cl{color:#77787b}
+.links .vl{font-size:11px;font-weight:600;color:var(--grey);align-self:center;min-width:52px}
+.links+.links{margin-top:4px}
+.tag.kept{background:#e3e4e5;color:#4d4d4f}.tag.updated{background:#e3eef8;color:#2a6fa8}.tag.new{background:#fdf0d5;color:#9a6b00}
+.lf{padding:7px 10px 10px;border-top:1px dashed #d5d6d7}
+.links{display:flex;gap:5px;flex-wrap:wrap}
+.links a{font-size:12px;font-weight:500;text-decoration:none;padding:3px 8px;border-radius:12px;border:1px solid var(--teal);color:var(--teal)}
+.links a.off{border-color:#d5d6d7;color:#b5b6b8;pointer-events:none}
+.st{font-size:12px;margin-top:6px;display:flex;align-items:center;gap:5px;color:var(--grey)}
+.dot{width:9px;height:9px;border-radius:50%;background:#d5d6d7;display:inline-block}
+.dot.p{background:var(--gold)}.dot.d{background:#5c9e2f}
+.soon{font-size:12px;color:#b5b6b8;font-style:italic}
+.rev{background:var(--lg);font-size:13px;color:var(--grey);padding:5px 16px;border-top:1px solid #d5d6d7}
+footer{max-width:1180px;margin:0 auto;padding:0 22px 30px;font-size:12px;color:var(--grey)}
+@media(max-width:1000px){.grid{grid-template-columns:repeat(3,1fr)}.ls:nth-child(3n){border-right:0}.ls{border-bottom:1px solid #d5d6d7}}
+@media(max-width:620px){.grid{grid-template-columns:1fr}.ls{border-right:0}}
+</style></head><body>
+<header><div class="lv">A2+</div><h1>Business Partner · Contents</h1><div class="who" id="who">Template<b>All lessons</b></div></header>
+<div class="top">
+ <div class="tracks" id="tracks"></div>
+ <div class="prog"><span id="ptxt">0 / 0 done</span><div class="bar"><i id="pbar"></i></div></div>
+</div>
+<div class="legend">
+ <span><span class="tag kept" style="margin:0">Kept</span> as in the book</span>
+ <span><span class="tag updated" style="margin:0">Updated</span> modern context: video calls, Slack, Jira</span>
+ <span><span class="tag new" style="margin:0">New</span> new topic: AI, current problems</span>
+ <span><span class="tag both" style="margin:0">Classic + Updated</span> writing: book email/letter + modern chat version</span>
+ <span><span class="dot"></span> not started</span><span><span class="dot p"></span> in progress</span><span><span class="dot d"></span> done</span>
+</div>
+<main id="units"></main>
+<footer>Valentyna Hordiienko · Middle Learning Architect</footer>
+<script>
+const DATA={"units": [["1", "Travelling for work", [["1.1", "Business travel", "Vocabulary: transport, accommodation · Project: helping a business traveller", "kept", "ready"], ["1.2", "Events management", "Comparatives & superlatives · Choosing a venue for a team event or offsite", "updated", "soon"], ["1.3", "Small talk", "Small talk before a video call and at events · Showing interest", "kept", "soon"], ["1.4", "Dealing with problems", "Explaining and solving IT problems in a support chat or video call", "kept", "soon"], ["1.5", "Writing: Asking for information", "Slack / messenger message asking for information · can / could", "both", "soon", "Email asking for information · can / could"], ["W1", "Business workshop: A business trip", "Video call to arrange a trip · Task: rearrange plans", "updated", "soon"]]], ["2", "Business location", [["2.1", "Office, hybrid or coworking?", "Vocabulary: location · Choosing where a team works", "updated", "soon"], ["2.2", "Visiting Singapore", "enough / too · Describing problems in a new city", "kept", "soon"], ["2.3", "Checking and clarifying", "Clarifying in video meetings and chats", "kept", "soon"], ["2.4", "Starting a meeting", "Opening an online meeting, agenda, purpose", "kept", "soon"], ["2.5", "Writing: Short messages", "Slack / Teams messages · Abbreviations: ASAP, FYI, EOD, WFH", "both", "soon", "Informal and formal short messages · Present Continuous"], ["W2", "Business workshop: A new location", "Choose a hub for a hybrid team", "updated", "soon"]]], ["3", "Retail", [["3.1", "Unusual business models", "Subscriptions, pay-per-minute, marketplaces", "updated", "soon"], ["3.2", "The online shopping experience", "Past Simple & Continuous · Shopping online vs offline", "updated", "soon"], ["3.3", "Solving workflow problems", "Solving problems with Jira tickets and in team chats", "kept", "soon"], ["3.4", "Presenting results", "Signposting a presentation · Dashboards", "kept", "soon"], ["3.5", "Writing: An online review", "App, Google and marketplace reviews · Adverbs", "both", "soon", "An online review form · Types of adverbs"], ["W3", "Business workshop: Pop-up stores", "Launch a pop-up or an online shop", "kept", "soon"]]], ["4", "Work patterns", [["4.1", "My working life", "Remote, hybrid, 4-day week · Jobs and contracts", "updated", "soon"], ["4.2", "Burnout and work-life balance", "Present Perfect · A real problem of millennials at work", "new", "soon"], ["4.3", "Making group decisions", "Facilitating a decision-making meeting", "kept", "soon"], ["4.4", "Changing arrangements", "Rescheduling on a video call, in chat and in the calendar", "kept", "soon"], ["4.5", "Writing: Confirming arrangements", "Calendar invites and Slack messages · Prepositions of time", "both", "soon", "Emails confirming arrangements · Prepositions of time"], ["W4", "Business workshop: An async-first company", "Negotiate changes to work patterns", "updated", "soon"]]], ["5", "Money", [["5.1", "Going cashless", "Money vocabulary · Apple Pay, banking apps", "kept", "soon"], ["5.2", "Subscriptions and spending", "First conditional · Too many subscriptions?", "updated", "soon"], ["5.3", "Negotiating team roles", "Agreeing on team roles in meetings", "kept", "soon"], ["5.4", "Presenting facts and figures", "Numbers, figures, quoting data", "kept", "soon"], ["5.5", "Writing: A price change announcement", "Message to clients about a new price · because, so, so that", "both", "soon", "Formal letter about a price increase · because, so, so that"], ["W5", "Business workshop: Local economy boost", "Choose and present a project", "kept", "soon"]]], ["6", "Teamwork", [["6.1", "Working together remotely", "Teamwork vocabulary · Remote team habits", "updated", "soon"], ["6.2", "Team building online and offline", "Pronouns with some- / every-", "updated", "soon"], ["6.3", "Supporting a colleague", "Encouraging and motivating", "kept", "soon"], ["6.4", "Being positive in meetings", "Supporting, building on and questioning ideas", "kept", "soon"], ["6.5", "Writing: Making requests", "Requests in Slack and Jira comments · Sequencing words", "both", "soon", "Email making a request · Linking words for sequence"], ["W6", "Business workshop: Rearrange team roles", "Reassign tasks on a Jira board", "updated", "soon"]]], ["7", "Research & development", [["7.1", "A nimble company", "Agile, MVP, product testing", "updated", "soon"], ["7.2", "AI at work", "can, have to, need to · Using AI tools in your job", "new", "soon"], ["7.3", "Giving explanations", "Explaining how to use an app or an AI tool", "kept", "soon"], ["7.4", "Dealing with technical problems", "Technical problems in an online meeting", "kept", "soon"], ["7.5", "Writing: Preparing slides", "Slides in Google Slides / Canva, with AI help · Wh- questions", "both", "soon", "Presentation slides · Wh- questions"], ["W7", "Business workshop: Prioritising the backlog", "Plan a sprint in Jira · Explain the decision in a message", "updated", "soon"]]], ["8", "Green solutions", [["8.1", "Green business", "The environment · Greenwashing or real change?", "updated", "soon"], ["8.2", "Transport solutions", "should and could for advice", "kept", "soon"], ["8.3", "Giving and receiving feedback", "Feedback in a review meeting", "kept", "soon"], ["8.4", "Managing questions", "A Q&A session in a webinar", "kept", "soon"], ["8.5", "Writing: A company update", "Notion / Slack company update · Future forms", "both", "soon", "Intranet update · Future forms"], ["W8", "Business workshop: A greener office", "Present ideas on waste and energy", "kept", "soon"]]]]};
+const TRACKS=[["all", "For everyone"], ["it", "IT"], ["pm", "Project managers"], ["design", "Designers"]];
+
+/* Student pages: set STUDENT and ASSIGNED; template shows everything */
+const STUDENT={"name": "Maryna", "track": "all", "code": "e53224bedc2405525d9750dbd7fb59b1"};            // e.g. {name:"Larysa", track:"all"}
+const ASSIGNED={"1.1": {"track": "all", "pages": ["hw", "extra"]}};
+const SHOW_ALL=true;  // student page: show the whole level, open only assigned lessons           // e.g. {"1.1":"all","1.2":"all"} — null = show all
+const PROGRESS={};const COMMENTS={};
+const VARIANTS={"1.1": ["all"]};
+const PAGES={};  // pages ready per lesson in the template; missing → all three  // which track versions exist; missing → "all"             // filled from Supabase: {"1.1":"done","1.2":"progress"}
+let track=(STUDENT&&STUDENT.track)||"all";
+const path=(n,t,f)=>`lessons/${n.replace(".","-").toLowerCase()}/${t}/${f}.html?v=202611161009`;
+function render(){
+ const box=document.getElementById("units");box.innerHTML="";let tot=0,done=0;
+ DATA.units.forEach(([u,title,ls])=>{
+  const vis=ls.filter(l=>SHOW_ALL||!ASSIGNED||ASSIGNED[l[0]]);if(!vis.length)return;
+  let ud=0;
+  const cells=vis.map(([n,t,d,tag,st,cl])=>{
+   tot++;const pr=PROGRESS[n]||"none";if(pr==="done"){done++;ud++}
+   const A=ASSIGNED&&ASSIGNED[n];let tr=A?(A.track||A):track;const PG=(A&&A.pages)||PAGES[n]||["lesson","hw","extra"];if(!(VARIANTS[n]||["all"]).includes(tr))tr="all";const ready=st==="ready";
+   const ws=n.startsWith("W");
+   const NM={lesson:"Lesson",hw:"Homework",extra:"Extra"};
+   const L3=(t2,lab)=>`<div class="links">${lab?`<span class="vl">${lab}</span>`:""}${PG.map(p=>`<a href="${path(n,t2,p)}">${NM[p]}</a>`).join("")}</div>`;
+   const open=ready&&(!ASSIGNED||A);
+   const links=open?(cl?L3(tr,"Updated")+L3(tr+"-classic","Classic"):L3(tr,""))+`
+     <div class="st"><span class="dot ${pr==="done"?"d":pr==="progress"?"p":""}"></span>${pr==="done"?"Done":pr==="progress"?"In progress":"Not started"}${COMMENTS[n]?" · 💬 teacher’s comment":""}</div>`
+     :`<div class="soon">Coming soon</div>`;
+   return `<div class="ls ${ws?"ws":""}"><div class="lh"><span class="n">${ws?"Workshop "+n.slice(1):n}</span><span class="t">${ws?t.replace("Business workshop: ",""):t}</span></div>
+     <div class="lb"><span class="tag ${tag}">${tag==="both"?"Classic + Updated":tag}</span><br>${cl?`<div class="ver"><b>💬 Updated</b>${d}</div><div class="ver cl"><b>✉️ Classic</b>${cl}</div>`:d}</div><div class="lf">${links}</div></div>`}).join("");
+  box.insertAdjacentHTML("beforeend",`<section class="unit"><div class="uh"><b>Unit ${u} › ${title}</b><span class="done">${ud} / ${vis.length} done</span></div><div class="grid">${cells}</div><div class="rev">Review</div></section>`);
+ });
+ document.getElementById("ptxt").textContent=`${done} / ${tot} done`;
+ document.getElementById("pbar").style.width=(tot?done/tot*100:0)+"%";
+}
+const tb=document.getElementById("tracks");
+if(STUDENT){document.getElementById("who").innerHTML=`Student<b>${STUDENT.name}</b>`;tb.style.display="none"}
+const CLIENT=null;  // corporate client template, e.g. "Zvenyhora": no track switch
+if(CLIENT&&!STUDENT){document.getElementById("who").innerHTML=`Client<b>${CLIENT}</b>`;tb.style.display="none"}
+TRACKS.forEach(([k,l])=>{const b=document.createElement("button");b.textContent=l;if(k===track)b.className="on";b.onclick=()=>{track=k;tb.querySelectorAll("button").forEach(x=>x.classList.remove("on"));b.className="on";render()};tb.appendChild(b)});
+render();
+/* Progress from Supabase (student pages only) */
+const SB_URL="https://zuegojpfhgigsvyrnymt.supabase.co",SB_KEY="sb_publishable__Xn8xRhne9Hp2ckaXu6xCQ_MOe52bng";
+if(STUDENT&&STUDENT.code){fetch(`${SB_URL}/rest/v1/rpc/get_my_progress`,{method:"POST",headers:{apikey:SB_KEY,"Content-Type":"application/json"},body:JSON.stringify({p_code:STUDENT.code})})
+ .then(r=>r.json()).then(rows=>{(rows||[]).forEach(r=>{const m=r.lesson.match(/(\d+\.\d+|W\d+)/);if(m){PROGRESS[m[1]]=r.submitted?"done":"progress";if(r.has_comment)COMMENTS[m[1]]=1}});render()}).catch(()=>{})}
+</script></body></html>

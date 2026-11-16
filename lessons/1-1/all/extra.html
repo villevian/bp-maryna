@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>1.1 Business travel — Extra materials</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--coral:#3fa9ad;--mag:#c4127a;--pur:#6b2a8c;--grey:#77787b;--lg:#eeeff0;--ink:#231f20;--green:#5c9e2f;--gbg:#eef6d3;--rbg:#fbe0db}
+*{box-sizing:border-box}body{margin:0;font-family:"Fira Sans",system-ui,sans-serif;color:var(--ink);background:#fff;font-weight:300}
+header{display:flex;align-items:stretch;border-bottom:3px solid var(--coral)}
+header .n{background:linear-gradient(120deg,var(--pur),var(--mag));color:#fff;font-weight:500;font-size:34px;padding:14px 22px}
+header h1{margin:0;align-self:center;padding-left:18px;font-weight:500;font-size:28px;color:#4d4d4f}
+header .t{margin-left:auto;align-self:center;margin-right:18px;background:var(--coral);color:#fff;font-weight:600;font-size:13px;padding:6px 12px;border-radius:4px}
+nav{display:flex;gap:6px;padding:14px 22px 0;flex-wrap:wrap}
+nav button{font:inherit;font-weight:500;border:1.5px solid var(--coral);background:#fff;color:var(--coral);padding:7px 14px;border-radius:20px;cursor:pointer}
+nav button.on{background:var(--coral);color:#fff}
+main{max-width:980px;margin:0 auto;padding:18px 22px 40px}
+.sec{display:none}.sec.on{display:block}
+h2{font-weight:500;color:var(--grey);font-size:22px;margin:6px 0 4px}
+.ins{font-weight:500;margin:0 0 14px}.ins b{color:var(--coral);font-size:20px;margin-right:6px}
+.vocab{display:flex;flex-wrap:wrap;gap:6px;border:1px solid #a7a9ac;padding:8px 10px;margin-bottom:16px;font-size:14px}
+.vocab span{background:var(--lg);padding:3px 8px;border-radius:3px}
+.card{background:var(--lg);border-left:5px solid var(--coral);padding:22px 24px;min-height:150px;position:relative}
+.card .cnt{position:absolute;top:10px;right:14px;color:var(--grey);font-size:13px}
+.big{font-size:30px;font-weight:500;margin:4px 0 10px}
+.hint{color:var(--grey);font-size:15px}
+.ans{display:none;margin-top:14px;padding:10px 14px;background:#fff;border:1px dashed var(--coral);color:#2a7fa8;font-style:italic;font-weight:400}
+.ans.show{display:block}
+.ctrl{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.ctrl button{font:inherit;font-weight:500;border:0;padding:9px 16px;border-radius:4px;cursor:pointer;background:#4d4d4f;color:#fff}
+.ctrl button.c{background:var(--coral)}.ctrl button.l{background:#fff;color:#4d4d4f;border:1px solid #a7a9ac}
+table.sp{border-collapse:collapse;width:100%;font-size:16px;margin:6px 0 4px;background:#fff}
+table.sp th,table.sp td{border:1px solid #c9cacc;padding:7px 10px;text-align:left}
+table.sp th{background:#e3e4e5;font-weight:600}
+table.sp td:first-child{font-weight:500;width:30%}
+.frames{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0 0 16px}
+.frames div{padding:9px 11px;font-size:14px;border-radius:4px;line-height:1.35}
+.frames b{display:block;font-weight:600;margin-bottom:2px}
+.f1{background:var(--gbg)}.f2{background:var(--rbg)}.f3{background:#fdf0d5}.f4{background:#e3eef8}
+.stmt{font-size:30px;font-weight:500;line-height:1.25;margin:6px 0 10px}
+.tag{display:inline-block;font-size:12px;font-weight:600;padding:3px 9px;border-radius:12px;color:#fff;margin-bottom:6px}
+.tt{background:var(--green)}.tf{background:#d6322f}.tp{background:#d99a1c}.to{background:var(--mag)}
+.note{font-size:14px;color:#4d4d4f;margin-top:8px}
+.key{display:grid;grid-template-columns:1fr 1fr;gap:6px 22px;font-size:15px}
+.key div{border-bottom:1px solid #e3e4e5;padding:4px 0}
+.key b{font-weight:600}
+.use{background:#f6f5f1;border:1px solid #e3e1da;border-radius:4px;padding:10px 14px;margin-top:12px}
+.use .uh{font-weight:600;margin-bottom:6px;color:#4d4d4f}
+.use ul{margin:0;padding-left:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:4px 18px;font-size:15px}
+.use li{font-weight:400}
+@media(max-width:700px){.use ul{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.frames{grid-template-columns:1fr 1fr}.big,.stmt{font-size:23px}}
+
+:root{--gold:#f2b631}
+.back{display:inline-block;margin:12px 22px 0;color:var(--coral);font-weight:500;text-decoration:none;font-size:15px}
+.ex{margin:26px 0 0}
+.ex .q{display:flex;gap:10px;align-items:baseline;font-weight:500;font-size:17px;margin-bottom:10px;line-height:1.35}
+.ex .q .n{color:var(--coral);font-weight:600;font-size:24px;min-width:30px}
+.ex .q small{display:block;font-weight:400;color:var(--grey);font-size:14px;margin-top:2px}
+.flash{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-left:40px}
+.fc{height:118px;perspective:800px;cursor:pointer}
+.fc .in{position:relative;width:100%;height:100%;transition:transform .45s;transform-style:preserve-3d}
+.fc.flip .in{transform:rotateY(180deg)}
+.fc .f,.fc .b{position:absolute;inset:0;backface-visibility:hidden;border-radius:6px;padding:12px;display:flex;flex-direction:column;justify-content:center;text-align:center}
+.fc .f{background:var(--lg);border-left:4px solid var(--coral);font-size:14.5px;line-height:1.35}
+.fc .f small{color:var(--grey);font-size:11px;margin-top:6px}
+.fc .b{background:#e6f4f4;transform:rotateY(180deg);font-weight:600;font-size:17px}
+.fc .b i{font-weight:400;font-size:13px;color:#2a7fa8;margin-top:6px}
+.fc.adv .f{border-left-color:var(--gold);background:#fdf7e6}
+.fc.adv .b{background:#fdf0d5}
+.row{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 0 40px;align-items:center}
+ol.it{list-style:none;padding:0;margin:0 0 0 40px}
+ol.it>li{display:flex;gap:10px;margin-bottom:10px;font-size:16px;line-height:1.5}
+ol.it>li>.i{font-weight:600;min-width:18px}
+ol.it>li>.t{flex:1}
+select,.g{font:inherit;font-size:15px}
+select{padding:3px 6px;border:1.5px solid #c9cacc;border-radius:4px;background:#fff}
+.g{border:0;border-bottom:1.5px solid var(--ink);padding:1px 4px;width:150px;background:#fff}
+.g.wide{width:min(560px,100%)}
+.right{border-color:#2e7d32!important;background:#eef7ea!important}.wrong{border-color:#c0392b!important;background:#fdecea!important}
+.chk{margin:8px 0 0 40px;display:flex;gap:10px;align-items:center}
+.chk button{font:inherit;font-weight:500;border:0;padding:8px 14px;border-radius:4px;cursor:pointer;background:var(--coral);color:#fff}
+.chk button.l{background:#fff;color:#4d4d4f;border:1px solid #a7a9ac}
+.chk span{font-size:14px;color:var(--grey)}
+.fb{display:none;margin:4px 0 2px;padding:7px 10px;border-radius:4px;font-size:14px;line-height:1.45}
+.fb.show{display:block}.fb.ok{background:#eef7ea;border-left:3px solid #2e7d32}.fb.no{background:#fdecea;border-left:3px solid #c0392b}
+.fb .h{font-weight:600;margin-bottom:3px}.fb .ua{color:#555;margin-top:3px}.fb .ua:before{content:"🇺🇦 "}.fb .en:before{content:"🇬🇧 "}
+.msg{margin-left:40px;max-width:620px}
+.bubble{background:#f4f4f5;border-radius:10px;padding:10px 12px;font-size:15px;margin-bottom:8px}
+.bubble b{font-weight:600;display:block;font-size:13px;color:#4a154b;margin-bottom:2px}
+textarea{font:inherit;font-size:15px;width:100%;min-height:80px;padding:8px 10px;border:1px solid #c9cacc;border-radius:4px}
+.model{display:none;margin-top:6px;background:#e6f4f4;padding:8px 12px;border-radius:4px;font-size:14.5px}
+.model.show{display:block}
+.sec-h{color:var(--grey);font-weight:500;font-size:20px;margin:34px 0 -8px;padding-top:12px;border-top:1px solid #e3e4e5}
+</style></head><body>
+<header><div class="n">1.1</div><h1>Business travel</h1><div class="t">EXTRA</div></header>
+<a class="back" href="../../../index.html">← Contents</a>
+<main>
+<p class="ins" style="margin-top:14px"><b>★</b>Extra practice for Lesson 1.1. Do as much as you want — check your answers yourself.</p>
+
+<div class="sec-h">Vocabulary</div>
+<div class="ex"><div class="q"><span class="n">1</span><span>Flashcards. Read the explanation, say the word, then tap the card to check.<small>Gold cards = next level words.</small></span></div>
+ <div class="flash"><div class="fc" onclick="this.classList.toggle('flip')"><div class="in"><div class="f">an arrangement to keep a hotel room for you<small>tap to flip</small></div><div class="b">reservation<i>make a reservation</i></div></div></div><div class="fc" onclick="this.classList.toggle('flip')"><div class="in"><div class="f">a journey by plane<small>tap to flip</small></div><div class="b">flight<i>take / catch a flight</i></div></div></div><div class="fc" onclick="this.classList.toggle('flip')"><div class="in"><div class="f">a car, van or bus<small>tap to flip</small></div><div class="b">vehicle<i>hire a vehicle</i></div></div></div><div class="fc" onclick="this.classList.toggle('flip')"><div class="in"><div class="f">an app to order a car with a driver<small>tap to flip</small></div><div class="b">ridesharing app<i>use a ridesharing app</i></div></div></div><div class="fc" onclick="this.classList.toggle('flip')"><div class="in"><div class="f">the door where you get on the plane<small>tap to flip</small></div><div class="b">gate<i>at gate 12</i></div></div></div><div class="fc" onclick="this.classList.toggle('flip')"><div class="in"><div class="f">the time you spend in a hotel<small>tap to flip</small></div><div class="b">stay<i>a comfortable stay</i></div></div></div><div class="fc" onclick="this.classList.toggle('flip')"><div class="in"><div class="f">a room where you wait for your flight<small>tap to flip</small></div><div class="b">lounge<i>the departure lounge</i></div></div></div><div class="fc" onclick="this.classList.toggle('flip')"><div class="in"><div class="f">where something is<small>tap to flip</small></div><div class="b">location<i>a great location</i></div></div></div><div class="fc" onclick="this.classList.toggle('flip')"><div class="in"><div class="f">buses, trains and the metro<small>tap to flip</small></div><div class="b">public transportation<i>take public transportation</i></div></div></div><div class="fc" onclick="this.classList.toggle('flip')"><div class="in"><div class="f">to or in another country<small>tap to flip</small></div><div class="b">abroad<i>go abroad</i></div></div></div><div class="fc" onclick="this.classList.toggle('flip')"><div class="in"><div class="f">late because of a problem<small>tap to flip</small></div><div class="b">delayed<i>delayed by two hours</i></div></div></div><div class="fc" onclick="this.classList.toggle('flip')"><div class="in"><div class="f">the action of leaving<small>tap to flip</small></div><div class="b">departure<i>departure time</i></div></div></div><div class="fc adv" onclick="this.classList.toggle('flip')"><div class="in"><div class="f">a short stop between two flights<small>★ next level · tap to flip</small></div><div class="b">layover<i>a layover in Vienna</i></div></div></div><div class="fc adv" onclick="this.classList.toggle('flip')"><div class="in"><div class="f">a night flight that arrives in the morning<small>★ next level · tap to flip</small></div><div class="b">red-eye<i>take the red-eye</i></div></div></div><div class="fc adv" onclick="this.classList.toggle('flip')"><div class="in"><div class="f">a small bag you take on the plane<small>★ next level · tap to flip</small></div><div class="b">carry-on<i>one carry-on only</i></div></div></div><div class="fc adv" onclick="this.classList.toggle('flip')"><div class="in"><div class="f">the plan of your trip<small>★ next level · tap to flip</small></div><div class="b">itinerary<i>send the itinerary</i></div></div></div><div class="fc adv" onclick="this.classList.toggle('flip')"><div class="in"><div class="f">money per day for food on a trip<small>★ next level · tap to flip</small></div><div class="b">per diem<i>a $60 per diem</i></div></div></div><div class="fc adv" onclick="this.classList.toggle('flip')"><div class="in"><div class="f">to pay back money you spent<small>★ next level · tap to flip</small></div><div class="b">reimburse<i>reimburse expenses</i></div></div></div><div class="fc adv" onclick="this.classList.toggle('flip')"><div class="in"><div class="f">tiredness after a flight across time zones<small>★ next level · tap to flip</small></div><div class="b">jet lag<i>I’m jet-lagged</i></div></div></div><div class="fc adv" onclick="this.classList.toggle('flip')"><div class="in"><div class="f">the document to get on the plane<small>★ next level · tap to flip</small></div><div class="b">boarding pass<i>show your boarding pass</i></div></div></div></div></div>
+
+<div class="ex"><div class="q"><span class="n">2</span><span>Collocations. Choose the verb that goes with the noun.</span></div>
+ <ol class="it"><li><span class="i">1</span><span class="t"><select data-k="co1" data-a="make"><option value="">–</option><option>make</option><option>do</option><option>take</option></select> a reservation<div class="fb" id="fb_co1"><div class="h"></div><div class="en">We say <b>make a reservation</b> (= book). <i>Do</i> is for tasks/activities: do the shopping.</div><div class="ua">Кажемо <b>make a reservation</b>. <i>Do</i> — для дій/справ: do the shopping.</div></div></span></li><li><span class="i">2</span><span class="t"><select data-k="co2" data-a="catch"><option value="">–</option><option>catch</option><option>take up</option><option>hold</option></select> a flight (= get on it in time)<div class="fb" id="fb_co2"><div class="h"></div><div class="en"><b>catch a flight</b> = get to it in time. The opposite is <b>miss a flight</b>.</div><div class="ua"><b>catch a flight</b> = встигнути на рейс. Протилежне — <b>miss a flight</b>.</div></div></span></li><li><span class="i">3</span><span class="t"><select data-k="co3" data-a="hire / rent"><option value="">–</option><option>hire / rent</option><option>lend</option><option>borrow</option></select> a car for a week<div class="fb" id="fb_co3"><div class="h"></div><div class="en"><b>hire / rent a car</b> = pay to use it. <i>Borrow</i> is free, from a friend.</div><div class="ua"><b>hire / rent a car</b> — орендувати за гроші. <i>Borrow</i> — позичити безкоштовно.</div></div></span></li><li><span class="i">4</span><span class="t"><select data-k="co4" data-a="check in"><option value="">–</option><option>check in</option><option>check up</option><option>check on</option></select> at the hotel at 3 pm<div class="fb" id="fb_co4"><div class="h"></div><div class="en"><b>check in</b> = register when you arrive; <b>check out</b> = leave and pay.</div><div class="ua"><b>check in</b> — заселитися; <b>check out</b> — виселитися й розрахуватися.</div></div></span></li><li><span class="i">5</span><span class="t"><select data-k="co5" data-a="submit"><option value="">–</option><option>submit</option><option>send up</option><option>give in to</option></select> an expense report<div class="fb" id="fb_co5"><div class="h"></div><div class="en"><b>submit an expense report</b> = officially give it to the company.</div><div class="ua"><b>submit an expense report</b> — подати звіт про витрати.</div></div></span></li><li><span class="i">6</span><span class="t"><select data-k="co6" data-a="board"><option value="">–</option><option>board</option><option>enter in</option><option>go on to</option></select> the plane<div class="fb" id="fb_co6"><div class="h"></div><div class="en"><b>board the plane</b> = get on the plane. Boarding pass = the document for this.</div><div class="ua"><b>board the plane</b> — сісти в літак. Звідси boarding pass.</div></div></span></li></ol>
+ <div class="chk"><button onclick="chkSel('co')">Check</button><span id="r_co"></span></div></div>
+
+<div class="sec-h">Grammar & accuracy</div>
+<div class="ex"><div class="q"><span class="n">3</span><span>Prepositions. Choose the correct option.</span></div>
+ <ol class="it"><li><span class="i">1</span><span class="t">My flight was delayed <select data-k="pr1" data-a="by"><option value="">–</option><option>by</option><option>on</option><option>for</option></select> two hours.<div class="fb" id="fb_pr1"><div class="h"></div><div class="en">Use <b>by</b> for the size of a change: delayed by two hours, prices went up by 5%.</div><div class="ua"><b>by</b> показує, на скільки щось змінилося: delayed by two hours.</div></div></span></li><li><span class="i">2</span><span class="t">I’ll meet you <select data-k="pr2" data-a="at"><option value="">–</option><option>at</option><option>on</option><option>in</option></select> the gate.<div class="fb" id="fb_pr2"><div class="h"></div><div class="en"><b>at</b> for a point/place where you meet: at the gate, at the reception.</div><div class="ua"><b>at</b> — для точки/місця зустрічі: at the gate.</div></div></span></li><li><span class="i">3</span><span class="t">I go <select data-k="pr3" data-a="abroad"><option value="">–</option><option>abroad</option><option>to abroad</option><option>in abroad</option></select> twice a year for work.<div class="fb" id="fb_pr3"><div class="h"></div><div class="en"><b>abroad</b> is an adverb — no preposition: go abroad, live abroad.</div><div class="ua"><b>abroad</b> — прислівник, без прийменника: go abroad.</div></div></span></li><li><span class="i">4</span><span class="t">We stayed <select data-k="pr4" data-a="at"><option value="">–</option><option>at</option><option>on</option><option>by</option></select> a business hotel.<div class="fb" id="fb_pr4"><div class="h"></div><div class="en"><b>stay at</b> a hotel (also <i>in</i> a hotel). Never <i>on</i>.</div><div class="ua"><b>stay at</b> a hotel (можна <i>in</i>). Ніколи не <i>on</i>.</div></div></span></li><li><span class="i">5</span><span class="t">We arrived <select data-k="pr5" data-a="in"><option value="">–</option><option>in</option><option>at</option><option>to</option></select> Berlin late at night.<div class="fb" id="fb_pr5"><div class="h"></div><div class="en"><b>arrive in</b> a city/country, <b>arrive at</b> a building/airport. Never <i>arrive to</i>.</div><div class="ua"><b>arrive in</b> місто/країна, <b>arrive at</b> будівля/аеропорт. Не <i>arrive to</i>.</div></div></span></li><li><span class="i">6</span><span class="t">It’s quicker to go <select data-k="pr6" data-a="by"><option value="">–</option><option>by</option><option>with</option><option>on the</option></select> train.<div class="fb" id="fb_pr6"><div class="h"></div><div class="en"><b>by</b> + transport without article: by train, by plane, by taxi. But <i>on foot</i>.</div><div class="ua"><b>by</b> + транспорт без артикля: by train. Але <i>on foot</i>.</div></div></span></li></ol>
+ <div class="chk"><button onclick="chkSel('pr')">Check</button><span id="r_pr"></span></div></div>
+
+<div class="ex"><div class="q"><span class="n">4</span><span>Find and fix the mistake. Write the correct sentence or the correct part.</span></div>
+ <ol class="it"><li><span class="i">1</span><span class="t"><s style="color:#c0392b">I did a reservation for two nights.</s><br><input class="g wide" data-k="er1" data-a='["made a reservation"]' data-show="made a reservation" placeholder="Write the correct version"><div class="fb" id="fb_er1"><div class="h"></div><div class="en">make, not do, with reservation.</div><div class="ua">З reservation — make, а не do.</div></div></span></li><li><span class="i">2</span><span class="t"><s style="color:#c0392b">The flight was late on two hours.</s><br><input class="g wide" data-k="er2" data-a='["delayed by two hours", "late by two hours", "two hours late"]' data-show="delayed by two hours / two hours late" placeholder="Write the correct version"><div class="fb" id="fb_er2"><div class="h"></div><div class="en">Use <b>by</b> or the structure <i>two hours late</i>.</div><div class="ua">Потрібно <b>by</b> або <i>two hours late</i>.</div></div></span></li><li><span class="i">3</span><span class="t"><s style="color:#c0392b">Public transportations is cheap here.</s><br><input class="g wide" data-k="er3" data-a='["public transportation is cheap here"]' data-show="Public transportation is cheap here." placeholder="Write the correct version"><div class="fb" id="fb_er3"><div class="h"></div><div class="en"><i>Transportation</i> is uncountable — no -s.</div><div class="ua"><i>Transportation</i> незлічуване — без -s.</div></div></span></li><li><span class="i">4</span><span class="t"><s style="color:#c0392b">We arrived to the airport at 6.</s><br><input class="g wide" data-k="er4" data-a='["arrived at the airport"]' data-show="arrived at the airport" placeholder="Write the correct version"><div class="fb" id="fb_er4"><div class="h"></div><div class="en"><b>arrive at</b> (airport, office), <b>arrive in</b> (city).</div><div class="ua"><b>arrive at</b> (аеропорт), <b>arrive in</b> (місто).</div></div></span></li><li><span class="i">5</span><span class="t"><s style="color:#c0392b">I travel to abroad a lot.</s><br><input class="g wide" data-k="er5" data-a='["travel abroad"]' data-show="travel abroad" placeholder="Write the correct version"><div class="fb" id="fb_er5"><div class="h"></div><div class="en">No <i>to</i> before abroad.</div><div class="ua">Перед abroad немає <i>to</i>.</div></div></span></li><li><span class="i">6</span><span class="t"><s style="color:#c0392b">The flight was very bored.</s><br><input class="g wide" data-k="er6" data-a='["very boring", "the flight was very boring"]' data-show="very boring" placeholder="Write the correct version"><div class="fb" id="fb_er6"><div class="h"></div><div class="en"><b>-ing</b> describes the thing (boring flight); <b>-ed</b> describes how you feel (I was bored).</div><div class="ua"><b>-ing</b> — про річ (boring flight), <b>-ed</b> — про почуття людини (I was bored).</div></div></span></li></ol>
+ <div class="chk"><button onclick="chkErr()">Check</button><span id="r_er"></span></div></div>
+
+<div class="sec-h">Writing for real life</div>
+<div class="ex"><div class="q"><span class="n">5</span><span>Write a short chat message (Slack / Telegram / Teams). Then compare with the model.</span></div>
+ <div class="msg"><div class="bubble"><b>Task 1</b>Your flight to Warsaw is delayed by 3 hours. You’ll miss the 11 am client meeting. Write to your team chat.</div><textarea placeholder="Write your message…"></textarea><div class="chk" style="margin-left:0"><button class="l" onclick="this.parentNode.nextElementSibling.classList.toggle('show')">Show a model answer</button></div><div class="model"><b>Model:</b> Hi team, my flight is delayed by three hours, so I’ll miss the 11 am meeting with the client. Can someone start without me? I’ll join online if I can. Sorry!</div></div><br><div class="msg"><div class="bubble"><b>Task 2</b>A colleague asks: “Where should I stay in your city?” Reply in 2–3 sentences.</div><textarea placeholder="Write your message…"></textarea><div class="chk" style="margin-left:0"><button class="l" onclick="this.parentNode.nextElementSibling.classList.toggle('show')">Show a model answer</button></div><div class="model"><b>Model:</b> I’d recommend the City Hotel — it’s quiet and in a great location, near the office. You can take public transportation from the airport, or use a ridesharing app.</div></div><br><div class="msg"><div class="bubble"><b>Task 3</b>The hotel lost your reservation. Write to your manager and ask what to do.</div><textarea placeholder="Write your message…"></textarea><div class="chk" style="margin-left:0"><button class="l" onclick="this.parentNode.nextElementSibling.classList.toggle('show')">Show a model answer</button></div><div class="model"><b>Model:</b> Hi Anna, the hotel can’t find my reservation and there are no free rooms. Can I book another hotel nearby? It’s about €20 more per night. Please let me know.</div></div><br></div>
+</main>
+<script>
+const norm=s=>s.trim().toLowerCase().replace(/[.!?]$/,"").replace(/\s+/g," ");
+function show(k,ok,ans){const f=document.getElementById("fb_"+k);f.className="fb show "+(ok?"ok":"no");f.querySelector(".h").innerHTML=ok?"✓ Correct! / Правильно!":"✗ Correct answer / Правильна відповідь: <b>"+ans+"</b>"}
+function chkSel(p){let n=0,t=0;document.querySelectorAll(`select[data-k^="${p}"]`).forEach(s=>{t++;const ok=s.value===s.dataset.a;if(ok)n++;s.classList.remove("right","wrong");s.classList.add(ok?"right":"wrong");show(s.dataset.k,ok,s.dataset.a)});document.getElementById("r_"+p).textContent=n+" / "+t+" correct"}
+function chkErr(){let n=0,t=0;document.querySelectorAll('input[data-k^="er"]').forEach(i=>{t++;const acc=JSON.parse(i.dataset.a);const v=norm(i.value);const ok=v&&acc.some(a=>v.includes(norm(a)));if(ok)n++;i.classList.remove("right","wrong");i.classList.add(ok?"right":"wrong");show(i.dataset.k,ok,i.dataset.show)});document.getElementById("r_er").textContent=n+" / "+t+" correct"}
+</script></body></html>

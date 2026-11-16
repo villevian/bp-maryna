@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>1.1 Business travel — Homework</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--coral:#3fa9ad;--mag:#c4127a;--pur:#6b2a8c;--grey:#77787b;--lg:#eeeff0;--ink:#231f20;--green:#5c9e2f;--gbg:#eef6d3;--rbg:#fbe0db}
+*{box-sizing:border-box}body{margin:0;font-family:"Fira Sans",system-ui,sans-serif;color:var(--ink);background:#fff;font-weight:300}
+header{display:flex;align-items:stretch;border-bottom:3px solid var(--coral)}
+header .n{background:linear-gradient(120deg,var(--pur),var(--mag));color:#fff;font-weight:500;font-size:34px;padding:14px 22px}
+header h1{margin:0;align-self:center;padding-left:18px;font-weight:500;font-size:28px;color:#4d4d4f}
+header .t{margin-left:auto;align-self:center;margin-right:18px;background:var(--coral);color:#fff;font-weight:600;font-size:13px;padding:6px 12px;border-radius:4px}
+nav{display:flex;gap:6px;padding:14px 22px 0;flex-wrap:wrap}
+nav button{font:inherit;font-weight:500;border:1.5px solid var(--coral);background:#fff;color:var(--coral);padding:7px 14px;border-radius:20px;cursor:pointer}
+nav button.on{background:var(--coral);color:#fff}
+main{max-width:980px;margin:0 auto;padding:18px 22px 40px}
+.sec{display:none}.sec.on{display:block}
+h2{font-weight:500;color:var(--grey);font-size:22px;margin:6px 0 4px}
+.ins{font-weight:500;margin:0 0 14px}.ins b{color:var(--coral);font-size:20px;margin-right:6px}
+.vocab{display:flex;flex-wrap:wrap;gap:6px;border:1px solid #a7a9ac;padding:8px 10px;margin-bottom:16px;font-size:14px}
+.vocab span{background:var(--lg);padding:3px 8px;border-radius:3px}
+.card{background:var(--lg);border-left:5px solid var(--coral);padding:22px 24px;min-height:150px;position:relative}
+.card .cnt{position:absolute;top:10px;right:14px;color:var(--grey);font-size:13px}
+.big{font-size:30px;font-weight:500;margin:4px 0 10px}
+.hint{color:var(--grey);font-size:15px}
+.ans{display:none;margin-top:14px;padding:10px 14px;background:#fff;border:1px dashed var(--coral);color:#2a7fa8;font-style:italic;font-weight:400}
+.ans.show{display:block}
+.ctrl{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.ctrl button{font:inherit;font-weight:500;border:0;padding:9px 16px;border-radius:4px;cursor:pointer;background:#4d4d4f;color:#fff}
+.ctrl button.c{background:var(--coral)}.ctrl button.l{background:#fff;color:#4d4d4f;border:1px solid #a7a9ac}
+table.sp{border-collapse:collapse;width:100%;font-size:16px;margin:6px 0 4px;background:#fff}
+table.sp th,table.sp td{border:1px solid #c9cacc;padding:7px 10px;text-align:left}
+table.sp th{background:#e3e4e5;font-weight:600}
+table.sp td:first-child{font-weight:500;width:30%}
+.frames{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:0 0 16px}
+.frames div{padding:9px 11px;font-size:14px;border-radius:4px;line-height:1.35}
+.frames b{display:block;font-weight:600;margin-bottom:2px}
+.f1{background:var(--gbg)}.f2{background:var(--rbg)}.f3{background:#fdf0d5}.f4{background:#e3eef8}
+.stmt{font-size:30px;font-weight:500;line-height:1.25;margin:6px 0 10px}
+.tag{display:inline-block;font-size:12px;font-weight:600;padding:3px 9px;border-radius:12px;color:#fff;margin-bottom:6px}
+.tt{background:var(--green)}.tf{background:#d6322f}.tp{background:#d99a1c}.to{background:var(--mag)}
+.note{font-size:14px;color:#4d4d4f;margin-top:8px}
+.key{display:grid;grid-template-columns:1fr 1fr;gap:6px 22px;font-size:15px}
+.key div{border-bottom:1px solid #e3e4e5;padding:4px 0}
+.key b{font-weight:600}
+.use{background:#f6f5f1;border:1px solid #e3e1da;border-radius:4px;padding:10px 14px;margin-top:12px}
+.use .uh{font-weight:600;margin-bottom:6px;color:#4d4d4f}
+.use ul{margin:0;padding-left:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:4px 18px;font-size:15px}
+.use li{font-weight:400}
+@media(max-width:700px){.use ul{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.frames{grid-template-columns:1fr 1fr}.big,.stmt{font-size:23px}}
+
+.bar{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid #e3e4e5;padding:10px 22px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.bar input{font:inherit;padding:7px 10px;border:1.5px solid var(--coral);border-radius:4px;min-width:200px}
+.bar .st{font-size:14px;color:var(--grey)}
+.bar .st.ok{color:#2e7d32}.bar .st.err{color:#c0392b}
+.outcome{display:flex;margin:14px 0 0}
+.outcome .l{background:var(--coral);color:#fff;font-weight:600;padding:10px 18px;font-size:15px}
+.outcome .r{flex:1;background:var(--lg);padding:10px 16px;font-size:15px}
+.ex{margin:26px 0 0;scroll-margin-top:70px}
+.ex .q{display:flex;gap:10px;align-items:baseline;font-weight:500;font-size:17px;margin-bottom:10px;line-height:1.35}
+.ex .q .n{color:var(--coral);font-weight:600;font-size:24px;min-width:30px}
+.ex .q .n small{font-size:17px}
+.lab{color:var(--grey);font-weight:500;font-size:20px;margin:30px 0 -6px;padding-top:10px;border-top:1px solid #e3e4e5}
+.lab.v{color:var(--mag)}
+.lnk{display:inline-flex;align-items:center;gap:5px;margin-left:8px;padding:2px 10px;border:1px solid var(--mag);border-radius:14px;color:var(--mag);font-size:13px;font-weight:500;text-decoration:none;white-space:nowrap}
+.lnk.x{border-color:var(--grey);color:#4d4d4f}
+.ticks{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 12px 40px}
+.ticks label{border:1.5px solid #c9cacc;border-radius:18px;padding:6px 12px;cursor:pointer;font-size:15px;user-select:none}
+.ticks input{display:none}
+.ticks label.on{border-color:var(--coral);background:#e6f4f4;font-weight:500}
+.ticks label.on:before{content:"✓ ";color:var(--coral);font-weight:600}
+.sub{font-weight:600;margin:6px 0 4px 40px}
+.wb{display:flex;flex-wrap:wrap;gap:6px 14px;border:1px solid #a7a9ac;padding:8px 12px;margin:0 0 12px 40px;font-size:15px}
+ol.it{list-style:none;padding:0;margin:0 0 0 40px}
+ol.it>li{display:flex;gap:10px;margin-bottom:9px;font-size:16px;line-height:1.5}
+ol.it>li>.i{font-weight:600;min-width:16px}
+ol.it>li>.t{flex:1}
+.g{font:inherit;font-size:15px;border:0;border-bottom:1.5px solid var(--ink);padding:1px 4px;width:170px;background:#fff}
+.g.right{border-color:#2e7d32;background:#eef7ea}.g.wrong{border-color:#c0392b;background:#fdecea}
+select{font:inherit;font-size:15px;padding:3px 6px;border:1.5px solid #c9cacc;border-radius:4px;background:#fff}
+select.right{border-color:#2e7d32;background:#eef7ea}select.wrong{border-color:#c0392b;background:#fdecea}
+.mc{display:grid;grid-template-columns:1fr 1fr;gap:4px 24px;margin:0 0 0 40px}
+.mc .qq{margin-bottom:10px;font-size:16px}
+.mc .qq>div{font-weight:500;margin-bottom:3px}
+.mc label{display:block;font-size:15px;padding:2px 0;cursor:pointer}
+.mc label input{margin-right:6px;accent-color:var(--coral)}
+textarea{font:inherit;font-size:15px;width:calc(100% - 40px);margin-left:40px;min-height:74px;padding:8px 10px;border:1px solid #c9cacc;border-radius:4px;resize:vertical}
+textarea.sm{min-height:44px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:4px 28px}
+.chk{margin:8px 0 0 40px;display:flex;gap:10px;align-items:center}
+.chk button,.btn{font:inherit;font-weight:500;border:0;padding:8px 14px;border-radius:4px;cursor:pointer;background:var(--coral);color:#fff}
+.chk span{font-size:14px;color:var(--grey)}
+.oval{margin-left:40px;border:1.3px solid var(--coral);border-radius:50%;padding:12px 30px;text-align:center;line-height:1.9;max-width:640px;font-size:15px}
+.oval span{margin:0 8px;white-space:nowrap}
+.eg{color:#2a7fa8;font-style:italic;font-weight:400;margin:8px 0 8px 40px}
+.proj{background:var(--lg);margin-top:30px;padding:0 0 16px}
+.proj .ph{background:repeating-linear-gradient(135deg,#7d7e81 0 6px,#707174 6px 12px);color:#fff;font-weight:500;font-size:19px;padding:9px 18px}
+.proj .ex{margin-top:16px;padding:0 16px}
+.cats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-left:40px}
+.cats div b{display:block;font-weight:600;font-size:14.5px;margin-bottom:3px}
+.cats textarea{margin-left:0;width:100%}
+.selfa{display:flex;margin-top:30px}
+.tcom{display:none;margin-top:16px;background:#fdf0d5;border-left:4px solid #f2b631;padding:10px 14px;border-radius:4px;font-size:15px;white-space:pre-wrap}
+.tcom b{display:block;margin-bottom:4px;font-weight:600}
+.selfa .l{background:var(--coral);color:#fff;font-weight:600;padding:14px 18px;display:flex;align-items:center}
+.selfa .r{flex:1;background:var(--lg);padding:12px 16px}
+.score{display:flex;gap:6px;margin-top:8px}
+.score button{font:inherit;width:38px;height:38px;border-radius:50%;border:1.5px solid var(--coral);background:#fff;color:var(--coral);font-weight:600;cursor:pointer}
+.score button.on{background:var(--coral);color:#fff}
+.send{margin:24px 0 40px;display:flex;gap:12px;align-items:center}
+.send .btn{padding:12px 22px;font-size:16px}
+.done{background:#eef7ea;border:1px solid #9ccc65;padding:10px 14px;border-radius:4px;display:none}
+.fb{display:none;margin:4px 0 2px;padding:7px 10px;border-radius:4px;font-size:14px;line-height:1.45;background:#f6f6f6}
+.fb.show{display:block}.fb.ok{background:#eef7ea;border-left:3px solid #2e7d32}.fb.no{background:#fdecea;border-left:3px solid #c0392b}
+.fb .h{font-weight:600;margin-bottom:3px}.fb .ua{color:#555;margin-top:3px}.fb .ua:before{content:"🇺🇦 "}.fb .en:before{content:"🇬🇧 "}
+.fb s{color:#c0392b}
+@media(max-width:760px){.mc,.two,.cats{grid-template-columns:1fr}.ticks,.wb,ol.it,.mc,.sub,.chk,.oval,.eg,.cats{margin-left:0}textarea{margin-left:0;width:100%}}
+</style></head><body>
+<header><div class="n">1.1</div><h1>Business travel</h1><div class="t">HOMEWORK</div></header>
+<div class="bar"><span class="st" id="st">Loading…</span></div>
+<a href="../../../index.html" style="display:inline-block;margin:12px 22px 0;color:#3fa9ad;font-weight:500;text-decoration:none;font-size:15px">← Contents</a>
+<main>
+<div class="outcome"><div class="l">Lesson outcome</div><div class="r">Learners can use vocabulary related to business travel.</div></div>
+
+<div class="tcom" id="tcom"><b>💬 Teacher’s comment</b><div id="tcomt"></div></div>
+<div class="lab">Lead-in</div>
+<div class="ex"><div class="q"><span class="n">1</span><span>Tick (✓) the types of transport and accommodation you use when you travel to another country.<a class="lnk " target="_blank" rel="noopener" href="https://english-dashboard.pearson.com/CDN/ProdStore/BUSINESS_PARTNER/A2P/packets/BPA2P_01_BusinessTravel_01/index.html?a5_lms_api=Console"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg>Do it online</a></span></div>
+ <div class="sub">Transport</div><div class="ticks" data-k="e1_t"><label><input type="checkbox" value="boat">boat</label><label><input type="checkbox" value="bus">bus</label><label><input type="checkbox" value="car">car</label><label><input type="checkbox" value="coach">coach</label><label><input type="checkbox" value="motorcycle">motorcycle</label><label><input type="checkbox" value="plane">plane</label><label><input type="checkbox" value="taxi">taxi</label><label><input type="checkbox" value="train">train</label></div>
+ <div class="sub">Accommodation</div><div class="ticks" data-k="e1_a"><label><input type="checkbox" value="bed and breakfast (B&B)">bed and breakfast (B&B)</label><label><input type="checkbox" value="budget hotel">budget hotel</label><label><input type="checkbox" value="business hotel">business hotel</label><label><input type="checkbox" value="holiday resort">holiday resort</label><label><input type="checkbox" value="home of friend or family">home of friend or family</label><label><input type="checkbox" value="luxury hotel">luxury hotel</label><label><input type="checkbox" value="rented apartment">rented apartment</label><label><input type="checkbox" value="youth hostel">youth hostel</label></div>
+</div>
+<div class="ex"><div class="q"><span class="n">2</span><span>When you travel, how do you choose which transport to use? Price? Speed? Comfort? How easy it is to use? What about accommodation? Price? Comfort? Location? Something else?<a class="lnk " target="_blank" rel="noopener" href="https://english-dashboard.pearson.com/CDN/ProdStore/BUSINESS_PARTNER/A2P/packets/BPA2P_01_BusinessTravel_02/index.html?a5_lms_api=Console"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg>Do it online</a></span></div>
+ <textarea class="" data-k="e2" placeholder="Write 2–3 sentences. We’ll talk about it in class."></textarea></div>
+
+<div class="lab v">VIDEO</div>
+<div class="ex"><div class="q"><span class="n">3</span><span>Watch the video about business travel. Which topics do the speakers talk about?<a class="lnk " target="_blank" rel="noopener" href="https://english-dashboard.pearson.com/CDN/ProdStore/BUSINESS_PARTNER/A2P/packets/BPA2P_01_BusinessTravel_03/index.html?a5_lms_api=Console"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg>Watch / do it online</a></span></div>
+ <div class="ticks" data-k="e3"><label><input type="checkbox" value="a Why they travel">a Why they travel</label><label><input type="checkbox" value="b Where they travel">b Where they travel</label><label><input type="checkbox" value="c Who they travel with">c Who they travel with</label><label><input type="checkbox" value="d Types of transportation">d Types of transportation</label><label><input type="checkbox" value="e Accommodation">e Accommodation</label><label><input type="checkbox" value="f The cost of travel">f The cost of travel</label><label><input type="checkbox" value="g Advice for travel">g Advice for travel</label><label><input type="checkbox" value="h How to pack a suitcase">h How to pack a suitcase</label></div></div>
+<div class="ex"><div class="q"><span class="n">4</span><span>Watch the video again and choose the correct option.<a class="lnk " target="_blank" rel="noopener" href="https://english-dashboard.pearson.com/CDN/ProdStore/BUSINESS_PARTNER/A2P/packets/BPA2P_01_BusinessTravel_04/index.html?a5_lms_api=Console"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg>Do it online</a><a class="lnk x" target="_blank" rel="noopener" href="https://english-dashboard.pearson.com/CDN/ProdStore/BUSINESS_PARTNER/A2P/packets/BPA2P_01_BusinessTravel_Extra_AB/index.html?a5_lms_api=Console"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg>Extra activity</a></span></div>
+ <div class="mc"><div class="qq"><div>1 Which type of travel do they talk about?</div><label><input type="radio" name="e4_1" data-k="e4_1" value="a"><b>a</b> travel to cities in their own country</label><label><input type="radio" name="e4_1" data-k="e4_1" value="b"><b>b</b> travel to other countries</label><label><input type="radio" name="e4_1" data-k="e4_1" value="c"><b>c</b> going to and from work</label></div><div class="qq"><div>2 What does Alex talk about?</div><label><input type="radio" name="e4_2" data-k="e4_2" value="a"><b>a</b> using his laptop for video chats</label><label><input type="radio" name="e4_2" data-k="e4_2" value="b"><b>b</b> problems with travelling a lot</label><label><input type="radio" name="e4_2" data-k="e4_2" value="c"><b>c</b> travelling by plane</label></div><div class="qq"><div>3 For a hotel, what’s important to Alessio?</div><label><input type="radio" name="e4_3" data-k="e4_3" value="a"><b>a</b> It needs to be near his job.</label><label><input type="radio" name="e4_3" data-k="e4_3" value="b"><b>b</b> It should have free breakfast.</label><label><input type="radio" name="e4_3" data-k="e4_3" value="c"><b>c</b> He likes to be able to book it online.</label></div><div class="qq"><div>4 How does Amira feel about talking with local people?</div><label><input type="radio" name="e4_4" data-k="e4_4" value="a"><b>a</b> She worries about it a lot.</label><label><input type="radio" name="e4_4" data-k="e4_4" value="b"><b>b</b> She never tries it.</label><label><input type="radio" name="e4_4" data-k="e4_4" value="c"><b>c</b> She likes it because they help her.</label></div><div class="qq"><div>5 What problem did Amira have at the airport?</div><label><input type="radio" name="e4_5" data-k="e4_5" value="a"><b>a</b> She didn’t arrive at the airport on time.</label><label><input type="radio" name="e4_5" data-k="e4_5" value="b"><b>b</b> She made a mistake about the time.</label><label><input type="radio" name="e4_5" data-k="e4_5" value="c"><b>c</b> The time of her plane was changed.</label></div><div class="qq"><div>6 What does Alessio’s advice include?</div><label><input type="radio" name="e4_6" data-k="e4_6" value="a"><b>a</b> an idea for having more free time</label><label><input type="radio" name="e4_6" data-k="e4_6" value="b"><b>b</b> an idea for saving money</label><label><input type="radio" name="e4_6" data-k="e4_6" value="c"><b>c</b> tips for good communication</label></div></div></div>
+<div class="ex"><div class="q"><span class="n">5</span><span>Do you think each speaker enjoys travelling for work? Why? / Why not?<a class="lnk " target="_blank" rel="noopener" href="https://english-dashboard.pearson.com/CDN/ProdStore/BUSINESS_PARTNER/A2P/packets/BPA2P_01_BusinessTravel_05/index.html?a5_lms_api=Console"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg>Do it online</a></span></div>
+ <textarea class="" data-k="e5" placeholder="Alex … / Alessio … / Amira …"></textarea></div>
+
+<div class="lab">Vocabulary · Transport, accommodation and travel</div>
+<div class="ex"><div class="q"><span class="n">6</span><span>Complete the sentences with these words from the video.<a class="lnk " target="_blank" rel="noopener" href="https://english-dashboard.pearson.com/CDN/ProdStore/BUSINESS_PARTNER/A2P/packets/BPA2P_01_BusinessTravel_06/index.html?a5_lms_api=Console"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg>Do it online</a></span></div>
+ <div class="wb"><span>flight</span><span>gate</span><span>location</span><span>lounge</span><span>public transportation</span><span>reservation</span><span>ridesharing app</span><span>stay</span><span>vehicle</span></div>
+ <ol class="it"><li><span class="i">1</span><span class="t">They made a <input class="g" data-k="e6_1" autocomplete="off"> for two rooms, but when they arrived, only one was available.<div class="fb" id="fb_e6_1"><div class="h"></div><div class="en"><b>make a reservation</b> = book something in advance. “for two rooms” tells us it’s a hotel booking. <i>Not “stay” or “flight” — you don’t make a flight for two rooms.</i></div><div class="ua"><b>make a reservation</b> = забронювати. Слова «for two rooms» підказують, що це бронювання в готелі. <i>Не «stay» чи «flight»: рейс не бронюють «на дві кімнати».</i></div></div></span></li><li><span class="i">2</span><span class="t">I took a thirteen-hour <input class="g" data-k="e6_2" autocomplete="off"> from Madrid to Buenos Aires.<div class="fb" id="fb_e6_2"><div class="h"></div><div class="en">“thirteen-hour … from Madrid to Buenos Aires” = a long journey between two countries by plane → <b>flight</b>. We say <i>take a flight</i>.</div><div class="ua">«Тринадцятигодинний … з Мадрида до Буенос-Айреса» — це довга подорож літаком між країнами → <b>flight</b> (рейс). Кажемо <i>take a flight</i>.</div></div></span></li><li><span class="i">3</span><span class="t">We need to hire a <input class="g" data-k="e6_3" autocomplete="off"> to take ten people from the airport to the conference centre.<div class="fb" id="fb_e6_3"><div class="h"></div><div class="en"><b>vehicle</b> = a car, van or bus. You <i>hire</i> a vehicle to take ten people. <i>Not “ridesharing app” — you use an app, you don’t hire it.</i></div><div class="ua"><b>vehicle</b> = транспортний засіб (авто, мікроавтобус). Для десяти людей його <i>hire</i>, тобто орендують. <i>Не «ridesharing app»: застосунок не орендують, ним користуються.</i></div></div></span></li><li><span class="i">4</span><span class="t">He usually uses a <input class="g" data-k="e6_4" autocomplete="off"> to get a car from one meeting to the next.<div class="fb" id="fb_e6_4"><div class="h"></div><div class="en">He <i>uses</i> something to <i>get a car</i> → an app where you order a car and a driver: <b>ridesharing app</b>. <i>Not “vehicle” — “use a vehicle to get a car” doesn’t make sense.</i></div><div class="ua">Він <i>uses</i> щось, щоб <i>get a car</i>, тобто викликати машину → <b>ridesharing app</b> (Uber, Bolt). <i>Не «vehicle»: «використати транспортний засіб, щоб отримати машину» не має сенсу.</i></div></div></span></li><li><span class="i">5</span><span class="t">I arrived at the <input class="g" data-k="e6_5" autocomplete="off"> five minutes after the plane had left.<div class="fb" id="fb_e6_5"><div class="h"></div><div class="en">“after the plane had left” → the place where you get on the plane: <b>gate</b>. <i>Not “lounge” — you wait in the lounge, but the plane leaves from the gate.</i> We say <i>at the gate</i>.</div><div class="ua">«Після того як літак вилетів» → місце посадки в літак: <b>gate</b> (вихід на посадку). <i>Не «lounge»: у лаунжі чекають, а сідають у літак біля gate.</i> Кажемо <i>at the gate</i>.</div></div></span></li><li><span class="i">6</span><span class="t">We had a comfortable <input class="g" data-k="e6_6" autocomplete="off"> in Vietnam because the resort was very modern.<div class="fb" id="fb_e6_6"><div class="h"></div><div class="en"><b>a comfortable stay</b> = the time you spend in a hotel or resort. “because the resort was very modern” describes the hotel experience.</div><div class="ua"><b>a comfortable stay</b> = комфортне перебування в готелі чи курорті. «Бо курорт був дуже сучасний» описує саме перебування.</div></div></span></li><li><span class="i">7</span><span class="t">They waited in the departure <input class="g" data-k="e6_7" autocomplete="off"> until it was time to get on the plane.<div class="fb" id="fb_e6_7"><div class="h"></div><div class="en"><b>departure lounge</b> is a fixed phrase: the room at the airport where you wait for your flight. <i>Not “gate” — you don’t “wait in the departure gate” until it’s time to board.</i></div><div class="ua"><b>departure lounge</b> — стала фраза: зал очікування в аеропорту. <i>Не «gate»: до посадки чекають у залі, а не «в гейті».</i></div></div></span></li><li><span class="i">8</span><span class="t">The <input class="g" data-k="e6_8" autocomplete="off"> of the apartment is perfect – near the office and the station.<div class="fb" id="fb_e6_8"><div class="h"></div><div class="en">“near the office and the station” describes <i>where</i> the apartment is → <b>location</b>.</div><div class="ua">«Поруч з офісом і вокзалом» описує, <i>де</i> розташована квартира → <b>location</b> (розташування).</div></div></span></li><li><span class="i">9</span><span class="t">I like to take <input class="g" data-k="e6_9" autocomplete="off"> so I can see what life in the city is like.<div class="fb" id="fb_e6_9"><div class="h"></div><div class="en"><b>take public transportation</b> = buses, trains, metro. You travel with local people, so you see real city life. <i>Public transportation</i> is uncountable: no “-s”.</div><div class="ua"><b>take public transportation</b> = їздити громадським транспортом. Їдеш разом з місцевими, тому бачиш справжнє життя міста. Слово незлічуване, без «-s».</div></div></span></li></ol>
+ <div class="chk"><button onclick="check6()">Check</button><span id="r6"></span></div></div>
+<div class="ex"><div class="q"><span class="n">7<small>A</small></span><span>Match the words in bold with the definitions.<a class="lnk " target="_blank" rel="noopener" href="https://english-dashboard.pearson.com/CDN/ProdStore/BUSINESS_PARTNER/A2P/packets/BPA2P_01_BusinessTravel_07/index.html?a5_lms_api=Console"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg>Do it online</a></span></div>
+ <div class="two"><ol class="it"><li><span class="i">1</span><span class="t">I go <b>abroad</b> for work trips quite often. &nbsp;<select data-k="e7a_1"><option value="">–</option><option value="a">a</option><option value="b">b</option><option value="c">c</option><option value="d">d</option><option value="e">e</option></select><div class="fb" id="fb_e7a_1"><div class="h"></div><div class="en"><b>abroad</b> = to or in another country (c). We say <i>go abroad</i>, not <s>go to abroad</s>.</div><div class="ua"><b>abroad</b> = за кордон / за кордоном (c). Кажемо <i>go abroad</i>, без «to».</div></div></span></li><li><span class="i">2</span><span class="t">I take several <b>short-haul</b> flights each year. &nbsp;<select data-k="e7a_2"><option value="">–</option><option value="a">a</option><option value="b">b</option><option value="c">c</option><option value="d">d</option><option value="e">e</option></select><div class="fb" id="fb_e7a_2"><div class="h"></div><div class="en"><b>short-haul</b> = a flight that travels a short distance (a). “Haul” = distance; the opposite is <i>long-haul</i>.</div><div class="ua"><b>short-haul</b> = рейс на коротку відстань (a). «Haul» = відстань; протилежне — <i>long-haul</i>.</div></div></span></li><li><span class="i">3</span><span class="t">The flight was <b>delayed</b> by two hours. &nbsp;<select data-k="e7a_3"><option value="">–</option><option value="a">a</option><option value="b">b</option><option value="c">c</option><option value="d">d</option><option value="e">e</option></select><div class="fb" id="fb_e7a_3"><div class="h"></div><div class="en"><b>delayed</b> = late, usually because of a problem (e). <i>delayed <u>by</u> two hours</i> — use “by” for how long.</div><div class="ua"><b>delayed</b> = затриманий, зазвичай через проблему (e). <i>delayed <u>by</u> two hours</i> — тривалість затримки з «by».</div></div></span></li><li><span class="i">4</span><span class="t">The captain said that we were ready for <b>landing</b>. &nbsp;<select data-k="e7a_4"><option value="">–</option><option value="a">a</option><option value="b">b</option><option value="c">c</option><option value="d">d</option><option value="e">e</option></select><div class="fb" id="fb_e7a_4"><div class="h"></div><div class="en"><b>landing</b> = bringing a plane down to the ground (b). The captain says “ready for landing” just before the plane comes down.</div><div class="ua"><b>landing</b> = посадка літака (b). Капітан каже «ready for landing» перед приземленням.</div></div></span></li><li><span class="i">5</span><span class="t">The <b>departure</b> was a few minutes late. &nbsp;<select data-k="e7a_5"><option value="">–</option><option value="a">a</option><option value="b">b</option><option value="c">c</option><option value="d">d</option><option value="e">e</option></select><div class="fb" id="fb_e7a_5"><div class="h"></div><div class="en"><b>departure</b> = the action of leaving, especially at the start of a journey (d). Look for “leaving” in the definition.</div><div class="ua"><b>departure</b> = відправлення, виліт (d). Ключове слово у визначенні — «leaving».</div></div></span></li></ol><ol class="it"><li><span class="i">a</span><span class="t">a flight or plane that travels a short distance</span></li><li><span class="i">b</span><span class="t">the action of bringing a plane down to the ground after being in the air</span></li><li><span class="i">c</span><span class="t">to or in another country</span></li><li><span class="i">d</span><span class="t">the action of leaving a place, especially at the start of a journey</span></li><li><span class="i">e</span><span class="t">late, usually because of a problem</span></li></ol></div>
+ <div class="chk"><button onclick="check7a()">Check</button><span id="r7a"></span></div></div>
+<div class="ex"><div class="q"><span class="n"><small>B</small></span><span>Write the words in bold in Exercise 7A with their opposites.<a class="lnk x" target="_blank" rel="noopener" href="https://english-dashboard.pearson.com/CDN/ProdStore/BUSINESS_PARTNER/A2P/packets/BPA2P_01_BusinessTravel_Extra_C/index.html?a5_lms_api=Console"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg>Extra activity</a></span></div>
+ <ol class="it"><li><span class="i">1</span><span class="t">long-haul &nbsp;<input class="g" data-k="e7b_1" autocomplete="off"><div class="fb" id="fb_e7b_1"><div class="h"></div><div class="en">long-haul ↔ <b>short-haul</b>: long distance vs short distance.</div><div class="ua">long-haul ↔ <b>short-haul</b>: далекий рейс ↔ близький.</div></div></span></li><li><span class="i">2</span><span class="t">take-off &nbsp;<input class="g" data-k="e7b_2" autocomplete="off"><div class="fb" id="fb_e7b_2"><div class="h"></div><div class="en">take-off ↔ <b>landing</b>: the plane goes up vs comes down.</div><div class="ua">take-off ↔ <b>landing</b>: зліт ↔ посадка.</div></div></span></li><li><span class="i">3</span><span class="t">arrival &nbsp;<input class="g" data-k="e7b_3" autocomplete="off"><div class="fb" id="fb_e7b_3"><div class="h"></div><div class="en">arrival ↔ <b>departure</b>: you come vs you leave. At airports: Arrivals / Departures.</div><div class="ua">arrival ↔ <b>departure</b>: прибуття ↔ відправлення. В аеропорту табло Arrivals / Departures.</div></div></span></li><li><span class="i">4</span><span class="t">on-time &nbsp;<input class="g" data-k="e7b_4" autocomplete="off"><div class="fb" id="fb_e7b_4"><div class="h"></div><div class="en">on-time ↔ <b>delayed</b>: at the planned time vs late. (“late” is also OK.)</div><div class="ua">on-time ↔ <b>delayed</b>: вчасно ↔ із затримкою. («late» теж зараховуємо.)</div></div></span></li><li><span class="i">5</span><span class="t">local &nbsp;<input class="g" data-k="e7b_5" autocomplete="off"><div class="fb" id="fb_e7b_5"><div class="h"></div><div class="en">local ↔ <b>abroad</b>: in your own area vs in another country. (“international / foreign” are also OK.)</div><div class="ua">local ↔ <b>abroad</b>: місцевий ↔ закордонний. («international / foreign» теж зараховуємо.)</div></div></span></li></ol>
+ <div class="chk"><button onclick="check7b()">Check</button><span id="r7b"></span></div></div>
+<div class="ex"><div class="q"><span class="n">8</span><span>Use adjectives to make sentences about business travel. Write three sentences.<a class="lnk " target="_blank" rel="noopener" href="https://english-dashboard.pearson.com/CDN/ProdStore/BUSINESS_PARTNER/A2P/packets/BPA2P_01_BusinessTravel_08/index.html?a5_lms_api=Console"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.5-1.5"/></svg>Do it online</a></span></div>
+ <div class="oval"><span>Making a hotel reservation</span> <span>Waiting in a lounge</span> <span>Travelling abroad</span> <span>Using a ridesharing app</span> <span>A delayed train or flight</span> <span>Driving when you’re abroad</span> <span>A long-haul flight</span></div>
+ <div class="eg">… is … because … — Travelling abroad <b>is</b> interesting <b>because</b> you see new places.</div>
+ <textarea class="sm" data-k="e8_1" placeholder="1. "></textarea><textarea class="sm" data-k="e8_2" placeholder="2. "></textarea><textarea class="sm" data-k="e8_3" placeholder="3. "></textarea></div>
+
+<div class="proj"><div class="ph">PROJECT: Helping a business traveller</div>
+ <div class="ex"><div class="q"><span class="n">9<small>A</small></span><span>Imagine you need to give advice about your town to a visitor from abroad. For each category, write what advice you would give and why.</span></div>
+  <div class="cats">
+   <div><b>Travel</b> — how to arrive: by plane, bus, train, etc.<textarea class="" data-k="e9_travel" placeholder=""></textarea></div>
+   <div><b>Accommodation</b> — where to stay<textarea class="" data-k="e9_acc" placeholder=""></textarea></div>
+   <div><b>Travelling around town</b> — transportation<textarea class="" data-k="e9_around" placeholder=""></textarea></div>
+   <div><b>Other useful information</b> — sights, food to try, etc.<textarea class="" data-k="e9_other" placeholder=""></textarea></div>
+  </div>
+  <div class="eg">The City Hotel is quiet and is in a good location. It’s a great place to stay.</div></div>
+ <div class="ex"><div class="q"><span class="n"><small>B</small></span><span>Prepare for a conference call with a colleague: write 3–4 questions the visitor might ask you. We’ll roleplay it in class.</span></div>
+  <div class="eg">A: How do I get to your city? &nbsp; B: Take a flight. Then take a train from the airport to the Central Rail Station.</div>
+  <textarea class="" data-k="e9b" placeholder="How do I get … ? Where can I … ?"></textarea></div>
+</div>
+
+<div class="selfa"><div class="l">Self-assessment</div><div class="r">How successfully have you achieved the lesson outcome? 0 = I need more practice, 5 = I know this well.
+ <div class="score" id="score"><button data-v="0">0</button><button data-v="1">1</button><button data-v="2">2</button><button data-v="3">3</button><button data-v="4">4</button><button data-v="5">5</button></div>
+ <textarea class="sm" data-k="q" placeholder="Questions for your teacher (optional)"></textarea></div></div>
+
+<div class="send"><button class="btn" id="submit">Send to my teacher</button><span class="st" id="st2"></span></div>
+<div class="done" id="done">✓ Your homework has been sent. You can still change your answers — they save automatically.</div>
+</main>
+<script>
+const SB_URL = "https://zuegojpfhgigsvyrnymt.supabase.co";
+const SB_KEY = "sb_publishable__Xn8xRhne9Hp2ckaXu6xCQ_MOe52bng";
+const LESSON = "BP A2+ 1.1 Business travel";
+const STUDENT_CODE = "e53224bedc2405525d9750dbd7fb59b1";   // personal code of the student whose page this is ("" = template preview)
+const rpc=(f,body)=>fetch(SB_URL+"/rest/v1/rpc/"+f,{method:"POST",headers:{apikey:SB_KEY,"Content-Type":"application/json"},body:JSON.stringify(body)}).then(async r=>{const t=await r.text();if(!r.ok)throw new Error(t);return t?JSON.parse(t):null});
+const K6=["reservation", "flight", "vehicle", "ridesharing app", "gate", "stay", "lounge", "location", "public transportation"], K7A=["c", "a", "e", "b", "d"], K7B=[["short-haul"], ["landing"], ["departure"], ["delayed", "late"], ["abroad", "international", "foreign"]];
+const $=id=>document.getElementById(id);
+let student="", timer=null, submitted=false, ready=false;
+const norm=s=>s.trim().toLowerCase().replace(/\s+/g," ").replace(/^(a|an|the) /,"");
+
+function collect(){
+ const a={};
+ document.querySelectorAll(".ticks").forEach(t=>a[t.dataset.k]=[...t.querySelectorAll("input:checked")].map(x=>x.value));
+ document.querySelectorAll("textarea[data-k], input.g[data-k], select[data-k]").forEach(x=>a[x.dataset.k]=x.value);
+ document.querySelectorAll("input[type=radio][data-k]:checked").forEach(x=>a[x.dataset.k]=x.value);
+ const s=document.querySelector("#score .on"); a.self=s?+s.dataset.v:null;
+ return a;
+}
+function fill(a){
+ document.querySelectorAll(".ticks").forEach(t=>{const v=a[t.dataset.k]||[];t.querySelectorAll("input").forEach(i=>{i.checked=v.includes(i.value);i.parentNode.classList.toggle("on",i.checked)})});
+ document.querySelectorAll("textarea[data-k], input.g[data-k], select[data-k]").forEach(x=>{if(a[x.dataset.k]!=null)x.value=a[x.dataset.k]});
+ document.querySelectorAll("input[type=radio][data-k]").forEach(x=>x.checked=a[x.dataset.k]===x.value);
+ document.querySelectorAll("#score button").forEach(b=>b.classList.toggle("on",a.self!=null&&+b.dataset.v===a.self));
+}
+function scores(){
+ const a=collect();let s6=0,s7a=0,s7b=0;
+ K6.forEach((k,i)=>{if(norm(a["e6_"+(i+1)]||"")===k)s6++});
+ K7A.forEach((k,i)=>{if(a["e7a_"+(i+1)]===k)s7a++});
+ K7B.forEach((k,i)=>{if(k.includes(norm(a["e7b_"+(i+1)]||"")))s7b++});
+ return {e6:s6+"/9",e7a:s7a+"/5",e7b:s7b+"/5"};
+}
+function status(t,c=""){$("st").textContent=t;$("st").className="st "+c}
+function local(){try{localStorage.setItem("hw:"+LESSON+":"+(STUDENT_CODE||"preview"),JSON.stringify(collect()))}catch(e){}}
+async function save(){
+ if(!ready)return;local();
+ if(!STUDENT_CODE){status("Template preview — answers are not sent anywhere.");return}
+ status("Saving…");
+ try{await rpc("save_hw",{p_code:STUDENT_CODE,p_lesson:LESSON,p_answers:collect(),p_score:scores(),p_submitted:submitted});status("Saved ✓ "+new Date().toLocaleTimeString().slice(0,5),"ok")}
+ catch(e){status("Not saved online — check your internet. Your answers are kept on this device.","err")}
+}
+function later(){clearTimeout(timer);timer=setTimeout(save,1200)}
+async function start(){
+ let a=null;
+ if(STUDENT_CODE){try{const r=await rpc("get_my_hw",{p_code:STUDENT_CODE,p_lesson:LESSON});const d=r&&r[0];
+  if(d){student=d.name;if(d.answers){a=d.answers;submitted=!!d.submitted;if(submitted)$("done").style.display="block"}
+   if(d.teacher_comment){$("tcomt").textContent=d.teacher_comment;$("tcom").style.display="block"}}}catch(e){}}
+ if(!a){try{a=JSON.parse(localStorage.getItem("hw:"+LESSON+":"+(STUDENT_CODE||"preview"))||"null")}catch(e){}}
+ if(a)fill(a);ready=true;
+ if(!STUDENT_CODE)status("Template preview — answers are not sent anywhere.");
+ else status(student?(a?"Welcome back, "+student+"! Your answers are loaded.":"Hi, "+student+"! Your answers save automatically."):"Your answers save automatically.","ok");
+}
+function mark(el,ok,correct){el.classList.remove("right","wrong");el.classList.add(ok?"right":"wrong");
+ const f=$("fb_"+el.dataset.k);if(!f)return;f.className="fb show "+(ok?"ok":"no");
+ f.querySelector(".h").innerHTML=ok?"✓ Correct! / Правильно!":(el.value?"✗ Not quite. / Не зовсім. ":"✗ No answer. / Немає відповіді. ")+"Correct answer / Правильна відповідь: <b>"+correct+"</b>"}
+function check6(){let n=0;K6.forEach((k,i)=>{const el=document.querySelector(`[data-k=e6_${i+1}]`);const ok=norm(el.value)===k;if(ok)n++;mark(el,ok,k)});$("r6").textContent=n+" / 9 correct";save()}
+function check7a(){let n=0;K7A.forEach((k,i)=>{const el=document.querySelector(`[data-k=e7a_${i+1}]`);const ok=el.value===k;if(ok)n++;mark(el,ok,k)});$("r7a").textContent=n+" / 5 correct";save()}
+function check7b(){let n=0;K7B.forEach((k,i)=>{const el=document.querySelector(`[data-k=e7b_${i+1}]`);const ok=k.includes(norm(el.value));if(ok)n++;mark(el,ok,k[0])});$("r7b").textContent=n+" / 5 correct";save()}
+document.querySelectorAll(".ticks label").forEach(l=>l.addEventListener("click",e=>{e.preventDefault();const i=l.querySelector("input");i.checked=!i.checked;l.classList.toggle("on",i.checked);later()}));
+document.querySelectorAll("#score button").forEach(b=>b.onclick=()=>{document.querySelectorAll("#score button").forEach(x=>x.classList.remove("on"));b.classList.add("on");later()});
+document.addEventListener("input",e=>{if(e.target.closest("main"))later()});
+document.addEventListener("change",e=>{if(e.target.closest("main"))later()});
+$("submit").onclick=async()=>{submitted=true;await save();$("done").style.display="block";$("st2").textContent=""};
+start();
+</script></body></html>
