@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>12 часів англійської</title>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* VOICE: teacher's reference card — clear, friendly, precise
+   IDEA: the classic 3×4 tense table from the student's notebook, made clickable
+   PICTURE: the grid itself + a timeline drawing for every tense
+   COLOUR and TYPE: white ground; one colour per aspect (blue, amber, green, violet); Fira Sans
+   LAYOUT: grid on top, detail card opens over it, quiz band below */
+:root{color-scheme:light;--bg:#fff;--ink:#1d2433;--mut:#5f6675;--line:#e3e6ec;
+--s:#2f6fd6;--sl:#e8f0fd;--c:#d98a00;--cl:#fdf3e1;--p:#1f9254;--pl:#e5f6ec;--pc:#7a4ad8;--pcl:#f1ebfd;--aux:#d6336c}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "Fira Sans",system-ui,sans-serif;overflow-x:clip}
+.band{padding:clamp(20px,3vw,40px) max(4vw,14px);max-width:1240px;margin:0 auto}
+h1{font-size:clamp(30px,4vw,44px);line-height:1.05;margin:0 0 6px;font-weight:600;text-wrap:balance}
+.lead{color:var(--mut);margin:0 0 18px;max-width:70ch}
+.tbl{display:grid;grid-template-columns:110px repeat(4,minmax(0,1fr));gap:6px}
+.hd{border-radius:10px;padding:10px 12px;font-weight:600;cursor:pointer;border:0;font:600 15px "Fira Sans",sans-serif;text-align:left;min-height:44px}
+.hd small{display:block;font-weight:400;font-size:13px;opacity:.85}
+.hd.s{background:var(--s);color:#fff}.hd.c{background:var(--c);color:#fff}.hd.p{background:var(--p);color:#fff}.hd.pc{background:var(--pc);color:#fff}
+.rh{background:#f2f4f8;color:var(--ink)}
+.cell{border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;cursor:pointer;background:#fff;text-align:left;font:inherit;color:inherit;transition:transform .15s,box-shadow .15s;display:flex;flex-direction:column;gap:4px}
+.cell:hover,.cell:focus-visible{transform:translateY(-2px);box-shadow:0 6px 18px rgba(30,40,70,.12);outline:none}
+.cell.s{border-top:5px solid var(--s)}.cell.c{border-top:5px solid var(--c)}.cell.p{border-top:5px solid var(--p)}.cell.pc{border-top:5px solid var(--pc)}
+.cell .nm{font-weight:600;font-size:15px}.cell .ex{font-size:15px}.cell .mk{font-size:13px;color:var(--mut)}
+.cell .done{font-size:12px;color:var(--p);font-weight:600}
+b.a{color:var(--aux);font-weight:600}
+.legend{display:flex;flex-wrap:wrap;gap:8px 18px;margin:12px 0 0;font-size:14px;color:var(--mut)}
+.ov{position:fixed;inset:0;background:rgba(20,28,45,.35);display:none;align-items:flex-start;justify-content:center;z-index:20;overflow:auto;padding:24px 12px}
+.ov.on{display:flex}
+.card{background:#fff;border-radius:16px;max-width:860px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.2);overflow:hidden}
+.ch{padding:18px 22px 12px;display:flex;gap:12px;align-items:flex-start}
+.ch h2{margin:0;font-size:30px;line-height:1.1;font-weight:600}.ch .ua{color:var(--mut);font-size:15px}
+.x{margin-left:auto;border:0;background:#f2f4f8;border-radius:50%;width:44px;height:44px;font-size:22px;cursor:pointer;flex:none}
+.tabs{display:flex;gap:6px;padding:0 22px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+.tabs button{border:0;background:none;font:500 15px "Fira Sans",sans-serif;padding:10px 12px;cursor:pointer;color:var(--mut);border-bottom:3px solid transparent;min-height:44px}
+.tabs button.on{color:var(--ink);border-color:var(--k)}
+.cb{padding:16px 22px 22px}
+.tl{width:100%;height:90px;display:block;margin:4px 0 10px}
+.box{border-radius:10px;padding:12px 16px;margin:10px 0;background:var(--kl)}
+.box h4{margin:0 0 6px;font-size:14px;font-weight:600;color:var(--k)}
+.f3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.f3>div{border:1.5px solid var(--line);border-radius:10px;padding:10px 12px}.f3 .sg{font-size:22px;font-weight:700;color:var(--k)}
+.f3 .fm{font-weight:500}.f3 .eg{font-size:15px;color:var(--mut);margin-top:4px}
+table.cj{border-collapse:collapse;width:100%;font-size:15px}table.cj td{padding:5px 8px;border-bottom:1px solid var(--line)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}.chips span{background:var(--kl);color:var(--ink);border-radius:14px;padding:3px 12px;font-size:15px}
+.auxc span{background:#fde6ee;color:var(--aux);font-weight:600}
+ul.tips{margin:4px 0;padding-left:20px}ul.tips li{margin:6px 0}
+.bad{color:#b0303a;text-decoration:line-through}.good{color:var(--p);font-weight:500}
+.q{border:1.5px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0}
+.q .qt{font-weight:500;margin-bottom:8px}.opts{display:flex;flex-wrap:wrap;gap:8px}
+.opts button{border:1.5px solid var(--line);background:#fff;border-radius:22px;padding:8px 16px;font:15px "Fira Sans",sans-serif;cursor:pointer;min-height:44px}
+.opts button:hover{border-color:var(--k)}.opts button.ok{background:var(--pl);border-color:var(--p)}.opts button.no{background:#fde8ea;border-color:#c4384a}
+.why{display:none;margin-top:8px;font-size:15px;color:var(--mut)}.why.on{display:block}
+.quiz{background:#f6f8fb;border-radius:16px;padding:20px 22px;margin-top:22px}
+.quiz h3{margin:0 0 4px;font-size:22px}.qz{font-size:20px;margin:12px 0}
+.bar{height:8px;background:#e3e6ec;border-radius:4px;overflow:hidden;margin:8px 0}.bar i{display:block;height:100%;background:var(--p);width:0;transition:width .3s}
+.btn{background:var(--ink);color:#fff;border:0;border-radius:22px;padding:10px 20px;font:500 15px "Fira Sans",sans-serif;cursor:pointer;min-height:44px}
+.btn.l{background:#fff;color:var(--ink);border:1.5px solid var(--line)}
+.row2{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+footer{color:var(--mut);font-size:13px;text-align:center;padding:20px}
+button:focus-visible{outline:3px solid #9cc0ff;outline-offset:2px}
+@media(max-width:760px){.tbl{grid-template-columns:minmax(0,1fr)}.tbl .corner{display:none}.tbl .hd{display:none}.tbl .rh{margin-top:12px}.cell .nm::before{content:attr(data-a) " · ";color:var(--mut);font-weight:400}.f3{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body>
+<div class="band">
+<a href="../index.html" style="color:#2f6fd6;text-decoration:none;font-weight:500">← My course</a>
+<h1>12 часів англійської</h1>
+<p class="lead">Натисни на будь-яку клітинку: побачиш сенс часу, формулу, допоміжні дієслова, слова-маркери, фішки й питання на перевірку. Заголовки стовпців і рядків теж відкриваються. Допоміжні дієслова виділені <b class="a">так</b>.</p>
+<div class="tbl" id="tbl"></div>
+<div class="legend"><span>🟦 Simple — факт</span><span>🟧 Continuous — процес (be + ‑ing)</span><span>🟩 Perfect — результат (have + V3)</span><span>🟪 Perfect Continuous — тривалість до моменту (have been + ‑ing)</span></div>
+<section class="quiz" id="quiz"></section>
+</div>
+<div class="ov" id="ov"><div class="card" id="card"></div></div>
+<footer>Valentyna Hordiienko · Middle Learning Architect</footer>
+<script>
+{
+const AS={s:["Simple","факт, звичка, подія","s"],c:["Continuous","дія в процесі","c"],p:["Perfect","результат до моменту","p"],pc:["Perfect Continuous","тривалість до моменту","pc"]};
+const ROWS=[["present","Present","теперішній"],["past","Past","минулий"],["future","Future","майбутній"]];
+const AUXRE=/\b(do|does|don't|doesn't|did|didn't|am|is|are|isn't|aren't|was|were|wasn't|weren't|have|has|haven't|hasn't|had|hadn't|been|will|won't|shall|shan't)\b/gi;
+const hl=t=>esc(t).replace(AUXRE,'<b class="a">$1</b>');
+function esc(t){return String(t).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+const T={
+present_s:{name:"Present Simple",ua:"теперішній простий",sense:"Дія звичайна, регулярна: звички, факти, розклади. «Що робить зазвичай?»",tl:"repeat",
+ aux:["do","does","don't","doesn't"],plus:["I / you / we / they write","he / she / it writes"],minus:"I don't write · She doesn't write",q:"Do you write? · Does she write?",
+ conj:["I write","You write","He / She / It writes","We write","They write"],
+ mk:["every day (week, month, year…)","always","usually","often","sometimes","seldom","never"],
+ tips:["he / she / it → додаємо <b>‑s</b>: <i>She writes</i>.","У запитанні й запереченні ‑s «переїжджає» в <b class='a'>does</b>, а дієслово — без ‑s: <i>Does she write?</i> <span class='bad'>Does she writes?</span>","Прислівник частоти — перед дієсловом (<i>I always write</i>), але після <b>am / is / are</b> (<i>She is always late</i>).","Розклади й графіки теж Present Simple: <i>The meeting starts at 10.</i>","Дієслова стану (know, like, want, need, understand) живуть у Simple, а не в Continuous."],
+ err:[["She don't work.","She doesn't work."],["Does he works?","Does he work?"]],
+ qz:[["She ___ to the office every Monday.",["go","goes","is going"],1,"Регулярна дія + she → V1 + s."],["___ your manager work from home?",["Do","Does","Is"],1,"your manager = he / she → Does."],["I ___ coffee in the morning. Never!",["don't drink","doesn't drink","am not drinking"],0,"I → don't; never = звичка."]]},
+present_c:{name:"Present Continuous",ua:"теперішній тривалий",sense:"Дія триває саме зараз, у цей момент. Також тимчасова ситуація або домовленість на найближче майбутнє.",tl:"now",
+ aux:["am","is","are","am not","isn't","aren't"],plus:["I am writing","he / she / it is writing","you / we / they are writing"],minus:"I'm not writing · He isn't writing",q:"Are you writing? · Is she writing?",
+ conj:["I am writing","You are writing","He / She / It is writing","We are writing","They are writing"],
+ mk:["now","at the moment","right now","today","this week","Look! / Listen!"],
+ tips:["Формула: <b class='a'>am / is / are</b> + V‑ing. Без допоміжного не можна: <span class='bad'>She working</span> → <span class='good'>She is working</span>.","Домовленість на майбутнє: <i>I'm meeting the client tomorrow.</i>","Тимчасове: <i>I'm working from home this week.</i>","<b>always</b> + Continuous = роздратування: <i>He's always interrupting!</i>","Дієслова стану (know, want, like) не беруть ‑ing: <span class='bad'>I'm knowing</span>."],
+ err:[["I am agree.","I agree."],["She working now.","She is working now."]],
+ qz:[["Shh! The team ___ a demo right now.",["has","is having","are having"],1,"Зараз + the team (it) → is + ‑ing."],["I ___ the client tomorrow at 3 — it's in my calendar.",["meet","am meeting","will meet"],1,"Домовленість, вже в календарі → Present Continuous."],["___ you working on the report at the moment?",["Do","Are","Is"],1,"at the moment → be + ‑ing; you → are."]]},
+present_p:{name:"Present Perfect",ua:"теперішній доконаний",sense:"Дія завершена, а результат важливий зараз. Також досвід («колись у житті») і період, що ще не закінчився. «Що зробив?»",tl:"result",
+ aux:["have","has","haven't","hasn't"],plus:["I / you / we / they have written","he / she / it has written"],minus:"I haven't written · She hasn't written",q:"Have you written? · Has she written?",
+ conj:["I have written","You have written","He / She / It has written","We have written","They have written"],
+ mk:["already","just","not … yet","ever","never","for","since","recently","this week"],
+ tips:["Формула: <b class='a'>have / has</b> + V3 (третя форма).","Нема конкретного часу в минулому! З <i>yesterday, ago, last week, in 2020</i> — тільки Past Simple.","<b>for</b> + період (for 3 years), <b>since</b> + точка (since 2020).","<b>yet</b> — у кінці заперечення й питання; <b>already, just</b> — між have і V3.","<i>He has gone</i> = поїхав і ще там; <i>He has been</i> = був і повернувся."],
+ err:[["I have seen him yesterday.","I saw him yesterday."],["She has wrote the brief.","She has written the brief."]],
+ qz:[["I ___ the report. Here it is!",["wrote","have written","have been writing"],1,"Результат видно зараз → Present Perfect."],["We ___ in this company since 2021.",["work","have worked","worked"],1,"since + досі → Perfect (або Perfect Continuous)."],["___ you ever ___ to London?",["Did / be","Have / been","Have / gone"],1,"Досвід у житті → Have you ever been…?"]]},
+present_pc:{name:"Present Perfect Continuous",ua:"теперішній доконано-тривалий",sense:"Дія почалась у минулому, тривала й досі триває (або щойно закінчилась, і видно наслідки). Головне — тривалість.",tl:"durNow",
+ aux:["have been","has been","haven't been","hasn't been"],plus:["I / you / we / they have been writing","he / she / it has been writing"],minus:"I haven't been writing",q:"Have you been writing? · How long has she been writing?",
+ conj:["I have been writing","You have been writing","He / She / It has been writing","We have been writing","They have been writing"],
+ mk:["for (протягом…)","since (з…)","How long…?","all day","lately","recently"],
+ tips:["Формула: <b class='a'>have / has been</b> + V‑ing.","Українською часто теперішній час: «Я працюю тут з 2020» → <i>I have been working here since 2020</i>, <span class='bad'>I am working here since 2020</span>.","Процес vs результат: <i>I've been writing emails all morning</i> (процес) / <i>I've written 5 emails</i> (результат, кількість).","Видимі наслідки: <i>You look tired. — I've been coding all night.</i>","Питання про тривалість: <b>How long have you been…?</b>"],
+ err:[["I am learning English for 2 years.","I have been learning English for 2 years."]],
+ qz:[["How long ___ you ___ for this company?",["have / been working","are / working","did / work"],0,"Тривалість до зараз → have been + ‑ing."],["My eyes hurt. I ___ at the screen all day.",["look","have been looking","looked"],1,"Видно наслідки тривалої дії → Perfect Continuous."],["She ___ the bug since 9 a.m. and it's still there.",["has been fixing","fixed","fixes"],0,"since + досі триває."]]},
+past_s:{name:"Past Simple",ua:"минулий простий",sense:"Дія сталась і завершилась у минулому, часто з конкретним часом. Також послідовність подій. «Що робив? / що зробив?»",tl:"point",
+ aux:["did","didn't"],plus:["I / you / he / she / it / we / they wrote","(правильні дієслова: + ‑ed — worked)"],minus:"I didn't write",q:"Did you write?",
+ conj:["I wrote","You wrote","He / She / It wrote","We wrote","They wrote"],
+ mk:["yesterday","two hours (days, weeks…) ago","last week (month, year)","in 2020","when…"],
+ tips:["Одна форма для всіх осіб: <i>I / she / they wrote</i>.","Після <b class='a'>did / didn't</b> — перша форма: <i>Did she write?</i> <span class='bad'>Did she wrote?</span>","Неправильні дієслова (write → wrote → written) треба вчити: друга колонка — Past Simple.","Є конкретний час (yesterday, ago) → Past Simple, а не Present Perfect.","Ланцюжок подій: <i>I opened Jira, read the ticket and fixed the bug.</i>"],
+ err:[["Did you saw the email?","Did you see the email?"],["I have finished it yesterday.","I finished it yesterday."]],
+ qz:[["We ___ the release two days ago.",["have shipped","shipped","ship"],1,"ago → Past Simple."],["___ you call the client yesterday?",["Did","Have","Were"],0,"yesterday → Did + V1."],["She didn't ___ the agenda.",["sent","send","sends"],1,"Після didn't — V1."]]},
+past_c:{name:"Past Continuous",ua:"минулий тривалий",sense:"Дія тривала в певний момент або проміжок у минулому. Часто фон, на який «падає» інша, коротка дія. «Що робив?»",tl:"durPast",
+ aux:["was","were","wasn't","weren't"],plus:["I / he / she / it was writing","you / we / they were writing"],minus:"I wasn't writing · They weren't writing",q:"Were you writing? · Was she writing?",
+ conj:["I was writing","You were writing","He / She / It was writing","We were writing","They were writing"],
+ mk:["at that time yesterday","at 7 o'clock yesterday","from 5 to 6 yesterday","the whole day yesterday","when mother came","while"],
+ tips:["Формула: <b class='a'>was / were</b> + V‑ing.","Довга дія + коротка: <i>I <b class='a'>was</b> writing when mother came.</i> (довга — Continuous, коротка — Simple).","<b>while</b> + Continuous, <b>when</b> + Simple: <i>While I was coding, the server crashed.</i>","Дві паралельні дії: <i>I was writing and she was testing.</i>","Українське «робив» (процес) часто = Past Continuous, «зробив» (результат) = Past Simple."],
+ err:[["I was write a report.","I was writing a report."],["They was working.","They were working."]],
+ qz:[["At 7 o'clock yesterday I ___ a presentation.",["prepared","was preparing","have prepared"],1,"Конкретний момент у минулому, процес → was + ‑ing."],["We ___ a meeting when the Wi-Fi went down.",["had","were having","have"],1,"Довга дія + коротка подія."],["What ___ you doing from 5 to 6 yesterday?",["was","were","did"],1,"you → were."]]},
+past_p:{name:"Past Perfect",ua:"минулий доконаний («передминулий»)",sense:"Дія завершилась до іншої дії або моменту в минулому. Дивимось із минулого ще далі назад.",tl:"before",
+ aux:["had","hadn't"],plus:["I / you / he / she / it / we / they had written"],minus:"I hadn't written",q:"Had you written?",
+ conj:["I had written","You had written","He / She / It had written","We had written","They had written"],
+ mk:["before","after","when","by (by 5 o'clock yesterday)","by the time","already","hardly … when"],
+ tips:["Формула: <b class='a'>had</b> + V3 — однаково для всіх осіб.","Потрібні дві точки в минулому: <i>When I came, the meeting <b class='a'>had</b> already started.</i>","Порівняй: <i>When I came, the meeting started</i> (почалась, коли прийшла) vs <i>had started</i> (почалась раніше).","<b>by</b> + момент у минулому: <i>By Friday we had fixed all bugs.</i>","Інверсія: <i>Hardly <b class='a'>had</b> I opened the laptop when the call started.</i>"],
+ err:[["When I arrived, they already left.","When I arrived, they had already left."]],
+ qz:[["When I joined the call, they ___ already ___ the decision.",["have / made","had / made","were / making"],1,"Дія до іншої дії в минулому → had + V3."],["By 2023 she ___ in three startups.",["had worked","has worked","works"],0,"by + момент у минулому."],["I ___ the file before the deadline.",["had sent","have sent","send"],0,"before + минуле → had + V3."]]},
+past_pc:{name:"Past Perfect Continuous",ua:"минулий доконано-тривалий",sense:"Дія почалась у минулому, тривала до певного моменту в минулому і ще продовжувалась тоді.",tl:"durBefore",
+ aux:["had been","hadn't been"],plus:["I / you / he / she / it / we / they had been writing"],minus:"I hadn't been writing",q:"Had you been writing? · How long had she been writing?",
+ conj:["I had been writing","You had been writing","He / She / It had been writing","We had been writing","They had been writing"],
+ mk:["for (протягом…)","since (з…)","How long…?","before","when"],
+ tips:["Формула: <b class='a'>had been</b> + V‑ing.","Це Present Perfect Continuous, перенесений у минуле: точка відліку — не зараз, а момент у минулому.","<i>When the manager came, we <b class='a'>had been</b> waiting for an hour.</i>","Пояснює причину стану в минулому: <i>She was tired because she had been working all night.</i>"],
+ err:[["I was waiting for an hour when he came.","I had been waiting for an hour when he came."]],
+ qz:[["We ___ for 40 minutes when the client finally joined.",["waited","had been waiting","have been waiting"],1,"Тривалість до моменту в минулому."],["He was tired because he ___ all night.",["had been coding","has been coding","codes"],0,"Причина стану в минулому."],["How long ___ she ___ there before she left?",["had / been working","has / been working","did / work"],0,"До моменту в минулому (before she left)."]]},
+future_s:{name:"Future Simple",ua:"майбутній простий",sense:"Дія відбудеться в майбутньому: рішення в момент мовлення, прогноз, обіцянка, пропозиція.",tl:"future",
+ aux:["will","won't","shall","shan't"],plus:["I / you / he / she / it / we / they will write"],minus:"I won't write",q:"Will you write? · Shall we start?",
+ conj:["I will write","You will write","He / She / It will write","We will write","They will write"],
+ mk:["tomorrow","in two hours (days, weeks…)","next week (month, year)","soon","I think…","probably"],
+ tips:["Формула: <b class='a'>will</b> + V1, заперечення <b class='a'>won't</b>.","<b class='a'>shall / shan't</b> — з I / we, офіційно або британське. Сьогодні живе в пропозиціях: <i>Shall we meet at 3?</i>","Рішення «тут і зараз»: <i>The laptop is slow. — I'll restart it.</i>","Після <b>when, if, before, after, until</b> — Present Simple, не will: <i>When mother comes, I'll call you.</i> <span class='bad'>When mother will come</span>","План, вже вирішений заздалегідь → <b>be going to</b> або Present Continuous."],
+ err:[["If it will rain, we'll stay.","If it rains, we'll stay."],["I will to send it.","I will send it."]],
+ qz:[["— The printer doesn't work. — OK, I ___ IT.",["call","will call","am calling"],1,"Рішення в момент мовлення → will."],["___ we start the meeting?",["Will","Shall","Do"],1,"Пропозиція з we → Shall we…?"],["When the client ___, I'll send the contract.",["will answer","answers","answered"],1,"Після when про майбутнє — Present Simple."]]},
+future_c:{name:"Future Continuous",ua:"майбутній тривалий",sense:"Дія триватиме в певний момент або проміжок у майбутньому.",tl:"durFuture",
+ aux:["will be","won't be"],plus:["I / you / he / she / it / we / they will be writing"],minus:"I won't be writing",q:"Will you be writing?",
+ conj:["I will be writing","You will be writing","He / She / It will be writing","We will be writing","They will be writing"],
+ mk:["at that time tomorrow","at 7 o'clock tomorrow","from 5 to 6 tomorrow","the whole day tomorrow","when mother comes"],
+ tips:["Формула: <b class='a'>will be</b> + V‑ing.","Процес у точці майбутнього: <i>At 10 tomorrow I'll be presenting.</i>","Ввічливе питання про плани: <i>Will you be using the meeting room at 3?</i> (м'якше, ніж Will you use…?)","<i>when mother comes</i> — Present Simple після when, а головна частина — Future Continuous."],
+ err:[["At 5 tomorrow I will write.","At 5 tomorrow I will be writing."]],
+ qz:[["Don't call at 10 — I ___ a demo then.",["will give","will be giving","give"],1,"Процес у точці майбутнього."],["___ you be using the projector this afternoon?",["Are","Will","Do"],1,"Ввічливе питання → Will you be…?"],["This time tomorrow we ___ to Berlin.",["will be flying","fly","flew"],0,"this time tomorrow → will be + ‑ing."]]},
+future_p:{name:"Future Perfect",ua:"майбутній доконаний",sense:"Дія завершиться до певного моменту в майбутньому.",tl:"byFuture",
+ aux:["will have","won't have"],plus:["I / you / he / she / it / we / they will have written"],minus:"I won't have written",q:"Will you have written?",
+ conj:["I will have written","You will have written","He / She / It will have written","We will have written","They will have written"],
+ mk:["by (by Friday, by 5 o'clock)","by the time","before","in two weeks"],
+ tips:["Формула: <b class='a'>will have</b> + V3.","Головне слово — <b>by</b> = «не пізніше ніж, до»: <i>By Friday I'll have finished the brief.</i>","Дедлайни й плани: <i>By the end of the sprint we'll have fixed 20 bugs.</i>","<b>by the time</b> + Present Simple: <i>By the time you come, I'll have left.</i>"],
+ err:[["By Friday I will finish it.","By Friday I will have finished it. (обидва зрозумілі, але Perfect точніший)"]],
+ qz:[["By Monday we ___ the new version.",["will release","will have released","released"],1,"by + момент у майбутньому → will have + V3."],["By the time you ___, I'll have left.",["come","will come","came"],0,"Після by the time — Present Simple."],["She ___ the course by June.",["will have finished","has finished","finishes"],0,"by June → Future Perfect."]]},
+future_pc:{name:"Future Perfect Continuous",ua:"майбутній доконано-тривалий",sense:"Дія триватиме до певного моменту в майбутньому і ще продовжуватиметься в той момент. Рахуємо тривалість.",tl:"durByFuture",
+ aux:["will have been","won't have been"],plus:["I / you / he / she / it / we / they will have been writing"],minus:"I won't have been writing",q:"Will you have been writing?",
+ conj:["I will have been writing","You will have been writing","He / She / It will have been writing","We will have been writing","They will have been writing"],
+ mk:["for (протягом…)","since (з…)","by…","by the time"],
+ tips:["Формула: <b class='a'>will have been</b> + V‑ing.","Майже завжди пара <b>for</b> + <b>by</b>: <i>By June I'll have been working here for two years.</i>","Найрідший час: у розмові часто кажуть простіше, але в тестах і на співбесіді «річниці» звучать саме так."],
+ err:[["By June I will work here for 2 years.","By June I will have been working here for 2 years."]],
+ qz:[["By December she ___ English for a year.",["will learn","will have been learning","learns"],1,"by + for → will have been + ‑ing."],["Next month we ___ on this project for six months.",["will have been working","work","have worked"],0,"Тривалість до моменту в майбутньому."],["Which word goes with this tense?",["yesterday","for … by …","now"],1,"for + by — типова пара."]]}};
+const HEAD={
+s:{t:"Simple",d:"<b>Факт.</b> Дія як подія або звичка, без акценту на процес. Допоміжні: <b class='a'>do / does</b> (Present), <b class='a'>did</b> (Past), <b class='a'>will</b> (Future). Ствердження Present і Past — без допоміжного."},
+c:{t:"Continuous",d:"<b>Процес.</b> Дія в розвитку в певний момент. Формула завжди: <b class='a'>be</b> (am / is / are / was / were / will be) + V‑ing. Ознака — <i>‑ing</i>."},
+p:{t:"Perfect",d:"<b>Результат до моменту.</b> Дія завершена до «зараз», до моменту в минулому або в майбутньому. Формула: <b class='a'>have</b> (have / has / had / will have) + V3."},
+pc:{t:"Perfect Continuous",d:"<b>Тривалість до моменту.</b> Скільки часу дія триває до точки відліку. Формула: <b class='a'>have been</b> (have / has / had / will have) + been + V‑ing. Маркери: <i>for, since, how long</i>."},
+present:{t:"Present",d:"Точка відліку — <b>зараз</b>. Допоміжні: do / does, am / is / are, have / has."},
+past:{t:"Past",d:"Точка відліку — <b>момент у минулому</b>. Допоміжні: did, was / were, had."},
+future:{t:"Future",d:"Точка відліку — <b>момент у майбутньому</b>. Допоміжне завжди <b class='a'>will</b> (+ be / have / have been)."}};
+let DONE={};try{DONE=JSON.parse(localStorage.getItem("tenses-done")||"{}")}catch(e){}
+const saveDone=()=>{try{localStorage.setItem("tenses-done",JSON.stringify(DONE))}catch(e){}};
+function grid(){
+ let h='<div class="corner"></div>'+Object.values(AS).map(a=>`<button class="hd ${a[2]}" data-h="${a[2]}">${a[0]}<small>${a[1]}</small></button>`).join("");
+ ROWS.forEach(([r,R,ua])=>{h+=`<button class="hd rh" data-h="${r}">${R}<small>${ua}</small></button>`;
+  Object.keys(AS).forEach(a=>{const t=T[r+"_"+a];h+=`<button class="cell ${a}" data-t="${r}_${a}"><span class="nm" data-a="${R}">${t.name}</span><span class="ex">${hl(t.conj[0])}</span><span class="mk">${esc(t.mk.slice(0,3).join(", "))}</span>${DONE[r+"_"+a]?'<span class="done">✓ перевірено</span>':''}</button>`})});
+ document.getElementById("tbl").innerHTML=h}
+const COL={s:["--s","--sl"],c:["--c","--cl"],p:["--p","--pl"],pc:["--pc","--pcl"]};
+function tlSvg(kind,color){
+ const W=800,H=90,y=50,now=500,ax=`<line x1="20" y1="${y}" x2="780" y2="${y}" stroke="#9aa1ad" stroke-width="2"/><polygon points="780,${y} 770,${y-6} 770,${y+6}" fill="#9aa1ad"/><line x1="${now}" y1="${y-18}" x2="${now}" y2="${y+18}" stroke="#1d2433" stroke-width="2"/><text x="${now}" y="${y+36}" text-anchor="middle" font-size="15" fill="#1d2433">зараз</text><text x="40" y="${y+36}" font-size="14" fill="#5f6675">минуле</text><text x="740" y="${y+36}" text-anchor="end" font-size="14" fill="#5f6675">майбутнє</text>`;
+ const dot=(x,l)=>`<circle cx="${x}" cy="${y}" r="9" fill="${color}"/>`+(l?`<text x="${x}" y="${y-18}" text-anchor="middle" font-size="14" fill="${color}">${l}</text>`:"");
+ const wave=(a,b)=>{let d=`M${a} ${y}`;for(let x=a;x<b;x+=20)d+=` q5 -12 10 0 q5 12 10 0`;return `<path d="${d}" fill="none" stroke="${color}" stroke-width="4"/>`};
+ const mark=(x,l)=>`<line x1="${x}" y1="${y-14}" x2="${x}" y2="${y+14}" stroke="#5f6675" stroke-width="2" stroke-dasharray="4 3"/><text x="${x}" y="${y-20}" text-anchor="middle" font-size="13" fill="#5f6675">${l}</text>`;
+ const arc=(a,b)=>`<path d="M${a} ${y-6} Q${(a+b)/2} ${y-40} ${b} ${y-6}" fill="none" stroke="${color}" stroke-width="2.5" stroke-dasharray="5 4"/>`;
+ const m={repeat:[120,200,280,360,440,560,640].map(x=>dot(x)).join("")+`<text x="380" y="${y-20}" text-anchor="middle" font-size="14" fill="${color}">завжди / зазвичай</text>`,
+  now:wave(now-60,now+60),result:dot(320,"дія")+arc(320,now)+`<text x="${now+12}" y="${y-22}" font-size="14" fill="${color}">результат ✓</text>`,
+  durNow:wave(240,now)+`<text x="370" y="${y-22}" text-anchor="middle" font-size="14" fill="${color}">for / since →</text>`,
+  point:dot(250,"yesterday"),durPast:wave(180,320)+mark(250,"at 7 yesterday"),before:mark(330,"інша дія")+dot(200,"раніше")+arc(200,330),
+  durBefore:mark(340,"момент")+wave(150,340),future:dot(660,"tomorrow"),durFuture:wave(610,730)+mark(670,"at 7 tomorrow"),
+  byFuture:mark(700,"by…")+dot(630,"готово")+arc(630,700),durByFuture:mark(720,"by…")+wave(now-80,720)};
+ return `<svg class="tl" viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Часова шкала">${ax}${m[kind]||""}</svg>`}
+let cur=null,tab="sense";
+function openT(id){cur=id;tab="sense";render()}
+function render(){
+ const t=T[cur],a=cur.split("_")[1],c=COL[a];const card=document.getElementById("card");
+ card.style.setProperty("--k",`var(${c[0]})`);card.style.setProperty("--kl",`var(${c[1]})`);
+ const tabs=[["sense","Сенс"],["form","Форма й допоміжні"],["mk","Маркери"],["tips","Фішки"],["quiz","Питання"]];
+ let b="";
+ if(tab==="sense")b=`${tlSvg(t.tl,getComputedStyle(document.documentElement).getPropertyValue(c[0]).trim())}<div class="box"><h4>Коли вживаємо</h4>${esc(t.sense)}</div><table class="cj">${t.conj.map(x=>`<tr><td>${hl(x)}</td></tr>`).join("")}</table>`;
+ if(tab==="form")b=`<div class="box auxc"><h4>Допоміжні дієслова</h4><div class="chips">${t.aux.map(x=>`<span>${esc(x)}</span>`).join("")}</div></div><div class="f3"><div><div class="sg">+</div><div class="fm">${t.plus.map(hl).join("<br>")}</div></div><div><div class="sg">−</div><div class="fm">${hl(t.minus)}</div></div><div><div class="sg">?</div><div class="fm">${hl(t.q)}</div></div></div>`;
+ if(tab==="mk")b=`<div class="box"><h4>Слова-маркери</h4><div class="chips">${t.mk.map(x=>`<span>${esc(x)}</span>`).join("")}</div></div><p class="lead">Маркер — підказка, а не закон: завжди перевір сенс речення.</p>`;
+ if(tab==="tips")b=`<div class="box"><h4>Фішки</h4><ul class="tips">${t.tips.map(x=>`<li>${x}</li>`).join("")}</ul></div><div class="box" style="background:#fff;border:1.5px solid var(--line)"><h4>Типові помилки</h4>${t.err.map(([x,y])=>`<div><span class="bad">${esc(x)}</span> → <span class="good">${esc(y)}</span></div>`).join("")}</div>`;
+ if(tab==="quiz")b=t.qz.map((q,i)=>`<div class="q"><div class="qt">${i+1}. ${esc(q[0])}</div><div class="opts">${q[1].map((o,j)=>`<button data-q="${i}" data-o="${j}">${esc(o)}</button>`).join("")}</div><div class="why" id="why${i}">${esc(q[3])}</div></div>`).join("")+`<p class="lead" id="qres"></p>`;
+ card.innerHTML=`<div class="ch"><div><h2>${t.name}</h2><div class="ua">${t.ua}</div></div><button class="x" aria-label="Закрити" id="cx">×</button></div><div class="tabs">${tabs.map(([k,l])=>`<button data-tab="${k}" class="${k===tab?"on":""}">${l}</button>`).join("")}</div><div class="cb">${b}</div>`;
+ document.getElementById("ov").classList.add("on")}
+function openH(k){const h=HEAD[k];const c=COL[k]||["--s","--sl"];const card=document.getElementById("card");card.style.setProperty("--k",`var(${c[0]})`);card.style.setProperty("--kl",`var(${c[1]})`);cur=null;
+ const list=Object.keys(T).filter(id=>id.split("_")[0]===k||id.split("_")[1]===k).map(id=>`<button class="btn l" data-t="${id}">${T[id].name}</button>`).join(" ");
+ card.innerHTML=`<div class="ch"><div><h2>${h.t}</h2></div><button class="x" aria-label="Закрити" id="cx">×</button></div><div class="cb"><div class="box">${h.d}</div><div class="row2">${list}</div></div>`;document.getElementById("ov").classList.add("on")}
+const close=()=>document.getElementById("ov").classList.remove("on");
+let qRight=0;
+document.addEventListener("click",e=>{
+ const cell=e.target.closest("[data-t]");if(cell){openT(cell.dataset.t);return}
+ const hd=e.target.closest("[data-h]");if(hd){openH(hd.dataset.h);return}
+ if(e.target.id==="cx"||e.target.id==="ov"){close();return}
+ const tb=e.target.closest("[data-tab]");if(tb){tab=tb.dataset.tab;qRight=0;render();return}
+ const ob=e.target.closest(".card [data-q]");if(ob&&cur){const q=T[cur].qz[+ob.dataset.q];const box=ob.parentElement;if(box.dataset.done)return;box.dataset.done=1;
+  const ok=+ob.dataset.o===q[2];ob.classList.add(ok?"ok":"no");if(!ok)box.children[q[2]].classList.add("ok");if(ok)qRight++;document.getElementById("why"+ob.dataset.q).classList.add("on");
+  if(document.querySelectorAll(".card .opts[data-done]").length===T[cur].qz.length){document.getElementById("qres").textContent=`Результат: ${qRight} / ${T[cur].qz.length}`+(qRight===T[cur].qz.length?" — чудово!":" — переглянь «Фішки».");if(qRight===T[cur].qz.length){DONE[cur]=1;saveDone();grid()}}}});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")close()});
+// Global quiz: "Який це час?" + "Обери форму"
+const POOL=[];Object.entries(T).forEach(([id,t])=>{t.qz.forEach(q=>POOL.push({type:"form",id,q}));
+ POOL.push({type:"which",id,text:(t.conj[2]||t.conj[0]).replace("He / She / It","She")})});
+let order=[],qi=0,score=0,answered=false;
+function startQuiz(){order=POOL.slice().sort(()=>Math.random()-.5).slice(0,12);qi=0;score=0;showQ()}
+function showQ(){const el=document.getElementById("quiz");answered=false;
+ if(qi>=order.length){el.innerHTML=`<h3>Готово!</h3><p class="qz">${score} / ${order.length}</p><p class="lead">${score>=10?"Ти добре відчуваєш часи.":"Відкрий часи, де були помилки, і прочитай «Фішки»."}</p><button class="btn" id="qs">Ще раз</button>`;return}
+ const it=order[qi];let opts,ans,txt,why;
+ if(it.type==="form"){txt=it.q[0];opts=it.q[1];ans=it.q[2];why=it.q[3]}
+ else{txt=`Який це час: «${it.text}»?`;const others=Object.keys(T).filter(x=>x!==it.id).sort(()=>Math.random()-.5).slice(0,2);const all=[it.id,...others].sort(()=>Math.random()-.5);opts=all.map(x=>T[x].name);ans=all.indexOf(it.id);why=`${T[it.id].name}: ${T[it.id].sense}`}
+ el.dataset.ans=ans;el.innerHTML=`<h3>🎯 Перевір себе</h3><p class="lead" style="margin:0">Питання ${qi+1} з ${order.length} · правильно: ${score}</p><div class="bar"><i style="width:${qi/order.length*100}%"></i></div><p class="qz">${esc(txt)}</p><div class="opts" id="gopts">${opts.map((o,j)=>`<button data-g="${j}">${esc(o)}</button>`).join("")}</div><p class="why" id="gwhy">${esc(why)}</p><div class="row2" style="margin-top:12px"><button class="btn" id="qn" style="display:none">Далі →</button><button class="btn l" data-t="${it.id}">Відкрити ${T[it.id].name}</button></div>`}
+document.getElementById("quiz").addEventListener("click",e=>{
+ if(e.target.id==="qs"){startQuiz();return}if(e.target.id==="qn"){qi++;showQ();return}
+ const b=e.target.closest("[data-g]");if(!b||answered)return;answered=true;const ans=+document.getElementById("quiz").dataset.ans;const ok=+b.dataset.g===ans;
+ b.classList.add(ok?"ok":"no");if(!ok)document.querySelectorAll("#gopts button")[ans].classList.add("ok");if(ok)score++;
+ document.getElementById("gwhy").classList.add("on");document.getElementById("qn").style.display=""});
+grid();startQuiz();
+}
+</script></body></html>
